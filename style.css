@@ -593,8 +593,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     footer .flex.items-center.gap-3 img {
-        max-height: 40px !important;
-        height: 40px !important;
+        max-height: 55px !important;
+        height: 55px !important;
         width: auto !important;
         margin: 0 !important;
         display: inline-block !important;
