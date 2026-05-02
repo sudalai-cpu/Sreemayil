@@ -79,17 +79,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 30px !important;
     }
 
-    /* Target images within About/Who We Are sections */
-    #about img,
-    section[id*="about"] img,
-    .about-image {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: cover !important;
-        border-radius: 8px !important;
-    }
-
-    /* Stacking Fix: Profile card (Mayilsamy T) should move below the image */
+    /* Restore and Fix About Section Composition */
     #about .relative.rounded-3xl.overflow-hidden,
     section[id*="about"] .relative.rounded-3xl.overflow-hidden {
         display: flex !important;
@@ -97,6 +87,16 @@ h1, h2, h3, h4, h5, h6 {
         overflow: visible !important;
         background: transparent !important;
         box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    #about img,
+    section[id*="about"] img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important; /* Ensure all faces are fully visible */
+        border-radius: 12px !important;
+        position: relative !important;
     }
 
     #about .glass-dark,
@@ -107,10 +107,18 @@ h1, h2, h3, h4, h5, h6 {
         right: auto !important;
         width: 100% !important;
         margin-top: 15px !important;
-        background: #1e3d1a !important; /* Solid background for clarity */
+        background: #1e3d1a !important; /* Solid background for legibility */
         backdrop-filter: none !important;
         padding: 20px !important;
         border-radius: 12px !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        text-align: left !important;
+    }
+
+    #about .glass-dark p,
+    section[id*="about"] .glass-dark p {
+        white-space: normal !important;
+        overflow: visible !important;
     }
 
     /* Product Card Responsiveness Fix - 2 Column Layout */
@@ -243,6 +251,77 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 14px !important;
         margin-bottom: 8px !important;
         line-height: 1.2 !important;
+    }
+
+    #services p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Training Syllabus Section Fixes - 2 Column Layout */
+    #syllabus .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        padding: 0 !important;
+    }
+
+    #syllabus .grid > div {
+        padding: 15px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 140px !important;
+        background: #ffffff !important;
+    }
+
+    #syllabus h4 {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+        line-height: 1.2 !important;
+        font-weight: 700 !important;
+    }
+
+    #syllabus p {
+        font-size: 11px !important;
+        line-height: 1.3 !important;
+        color: #4b5563 !important;
+    }
+
+    #syllabus span.block {
+        font-size: 9px !important;
+        margin-bottom: 8px !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    /* Varieties Section Optimization */
+    .grid-cols-2.md\:grid-cols-5 {
+        gap: 8px !important;
+        margin-top: 20px !important;
+    }
+
+    .grid-cols-2.md\:grid-cols-5 > div {
+        padding: 12px 5px !important;
+        font-size: 11px !important;
+        border-radius: 12px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Ensure images in any grid card are proportional */
+    .grid > div img {
+        width: 100% !important;
+        height: 120px !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
     }
 
     #services p {
