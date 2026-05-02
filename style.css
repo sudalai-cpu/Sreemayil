@@ -568,12 +568,17 @@ h1, h2, h3, h4, h5, h6 {
 /* FINAL FORCE OVERRIDE FOR MOBILE FOOTER (Infinix Zero 5G - 393px) */
 @media (max-width: 480px) {
     footer {
-        padding: 20px 10px !important;
+        padding: 15px 5px !important;
         text-align: center !important;
     }
 
     footer .max-w-7xl {
         padding: 0 !important;
+    }
+
+    footer .grid.mb-16 {
+        margin-bottom: 20px !important;
+        gap: 20px !important;
     }
 
     /* Force Logo & Brand Center Stack */
@@ -583,28 +588,38 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center !important;
         align-items: center !important;
         gap: 10px !important;
-        margin: 0 auto 15px auto !important;
+        margin: 0 auto 10px auto !important;
         width: 100% !important;
     }
 
-    footer img {
-        max-height: 60px !important;
-        height: 60px !important;
+    footer .flex.items-center.gap-3 img {
+        max-height: 40px !important;
+        height: 40px !important;
         width: auto !important;
         margin: 0 !important;
+        display: inline-block !important;
     }
 
-    footer span {
+    footer .flex.items-center.gap-3 span {
+        font-size: 18px !important;
         display: inline-block !important;
         margin: 0 !important;
     }
 
+    /* Force Description Text */
+    footer p.text-gray-300 {
+        font-size: 13px !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+
     /* Force Headings and Lists Center */
-    footer h3, footer h4, footer h5 {
+    footer h4, footer .font-heading {
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
         display: block !important;
+        margin-bottom: 15px !important;
     }
 
     footer ul {
@@ -620,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center !important;
         text-align: center !important;
         gap: 8px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 8px !important;
     }
     
     footer ul li i {
@@ -630,17 +645,21 @@ h1, h2, h3, h4, h5, h6 {
     /* WhatsApp Button Centering */
     footer a[href*="wa.me"] {
         display: flex !important;
-        margin: 15px auto !important;
+        margin: 10px auto !important;
         width: fit-content !important;
         justify-content: center !important;
         align-items: center !important;
+        padding: 10px 20px !important;
+        font-size: 14px !important;
     }
     
     /* Copyright Text */
     footer p.text-gray-500, footer .text-xs {
-        font-size: 10px !important;
-        margin-top: 15px !important;
+        font-size: 9px !important;
+        margin-top: 10px !important;
         display: block !important;
         text-align: center !important;
+        padding: 0 !important;
     }
 }
+
