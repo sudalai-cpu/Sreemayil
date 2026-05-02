@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Sreemayil Lifestyle Centre</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        natureGreen: {
+                            DEFAULT: '#2D5A27',
+                            light: '#4A7C44',
+                            dark: '#1E3D1A',
+                            accent: '#A3E635'
+                        },
+                        earthyCream: {
+                            DEFAULT: '#FDFAF5',
+                            dark: '#f0ede8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Catalog Specific Styles -->
+    <style>
+        .product-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 8px;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border: 1px solid #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .product-image-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            background: #fcfcfc;
+        }
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .product-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .product-tagline {
+            font-size: 12px;
+            color: #2d5a27;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 8px;
+                justify-items: center;
+            }
+            .product-card {
+                width: 100%;
+                max-width: none;
+                padding: 8px;
+                border-radius: 8px;
+            }
+            .product-image-container {
+                height: 240px;
+                margin-bottom: 8px;
+            }
+            .product-title {
+                font-size: 14px;
+                text-align: center;
+            }
+            .product-tagline {
+                font-size: 11px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .product-btn {
+                font-size: 12px;
+                padding: 8px 0;
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-earthyCream text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="w-full bg-white border-b border-gray-100 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <!-- Mobile Back Button -->
+                    <a href="index.html" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-natureGreen hover:bg-natureGreen hover:text-white transition-all shadow-sm border border-gray-100 group" aria-label="Back to Home">
+                        <i data-lucide="chevron-left" class="w-6 h-6 transition-transform group-hover:-translate-x-0.5"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-12 w-auto object-contain" />
+                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight hidden sm:block">Sreemayil</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#about" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="training.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Training
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="catalog.html" class="text-natureGreen text-[14px] font-bold relative group">
+                        Products
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
+                    </a>
+                    <a href="index.html#contact" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 py-6 space-y-3">
+                <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50">About</a>
+                <a href="training.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50">Training</a>
+                <a href="catalog.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5">Products</a>
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="index.html#contact" class="block w-full text-center px-6 py-3 bg-natureGreen text-white font-bold rounded-full shadow-md">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Boutique Header -->
+    <header class="py-10 bg-white border-b border-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-2xl md:text-3xl font-heading font-bold text-gray-900 tracking-tight">Handcrafted Herbal Soaps</h1>
+            <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Premium Boutique Collection</p>
+        </div>
+    </header>
+
+    <!-- Compact Grid -->
+    <main class="py-10 px-4 max-w-5xl mx-auto">
+        <div class="product-grid lg:grid lg:grid-cols-3 lg:gap-8 lg:justify-items-center">
+
+            <!-- 3.Herbal hair oil -->
+
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Rose">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Herbal Hair Oil </h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Long Hair</p>
+                    <a href="https://wa.me/919944019149?text=Order Rose Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!-- 6. Aloe Vera -->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Herbal-Tooyh-powder_Image.png" alt="Aloe Vera">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Herbal Tooth Powder</h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Bright Teeth</p>
+                    <a href="https://wa.me/919944019149?text=Order Aloe Vera Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!-- 1. Charcoal -->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Charcoal-Soap_Image.png" alt="Charcoal">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Charcoal Soap</h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Detox & Cleanse</p>
+                    <a href="https://wa.me/919944019149?text=Order Charcoal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!-- 2. Manjistha -->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Coconut-oil_image.png" alt="Manjistha">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Coconut Oil Soap</h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Skin Radiance</p>
+                    <a href="https://wa.me/919944019149?text=Order Manjistha Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            
+            
+
+            <!-- 4. Sandal -->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Pappaya-soup_image.png" alt="Sandal">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Pappaya Soap </h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Traditional Glow</p>
+                    <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!-- 5. Neem -->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Neam-Alovera-soup_image.png" alt="Neem">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Neem & Aloe Vera Soap</h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Skin Protection</p>
+                    <a href="https://wa.me/919944019149?text=Order Neem Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!--7. Kuppaimeni Soap-->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Kuppaimeni-soup_image.png" alt="Sandal">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Kuppanimeni Soup</h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Skin Protection</p>
+                    <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+            <!--8. Besan Soap-->
+            <div class="product-card flex flex-col">
+                <div class="product-image-container">
+                    <img src="assets/images/Besan-Soup_Image.png" alt="Sandal">
+                </div>
+                <div class="text-center md:text-left flex flex-col flex-grow">
+                    <h4 class="product-title font-bold text-gray-900 truncate">Besan Soap </h4>
+                    <p class="product-tagline text-natureGreen font-medium truncate">Face Glow</p>
+                    <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    
+
+    
+
+    <!-- Comprehensive Footer -->
+    <footer class="bg-[#1a3317] pt-20 pb-10 text-white border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand Identity -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-16 w-auto object-contain bg-white rounded-md p-0.5" />
+                        <span class="font-heading font-bold text-2xl tracking-tight">SreeMayil</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 max-w-xs">
+                        Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Navigation -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Home</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">About Us</a></li>
+                        <li><a href="training.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Training Workshops</a></li>
+                        <li><a href="catalog.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Product Catalog</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Information -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 text-sm text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <span>SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110.</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="tel:+919644010140" class="hover:text-natureGreen transition-colors">+91 9644010140</a>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="mailto:sreemayillifestyle@gmail.com" class="hover:text-natureGreen transition-colors">sreemayillifestyle@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: WhatsApp CTA -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Official Support
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+                        Have questions? Chat with us directly on WhatsApp for quick assistance.
+                    </p>
+                    <a href="https://wa.me/919644010140" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#25D366]/20 transition-all transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-10 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-xs tracking-widest uppercase">
+                    &copy; 2026 SreeMayil Lifestyle Centre. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+

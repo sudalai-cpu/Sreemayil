@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soap Making Training | Sreemayil Lifestyle Centre</title>
+    <meta name="description" content="Skill-based training on Herbal Soap Manufacturing. Empowering students and entrepreneurs with practical hands-on knowledge in natural soap making.">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        natureGreen: {
+                            DEFAULT: '#2D5A27',
+                            light: '#4A7C44',
+                            dark: '#1E3D1A',
+                            accent: '#A3E635'
+                        },
+                        earthyCream: {
+                            DEFAULT: '#FDFAF5',
+                            dark: '#f0ede8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-earthyCream text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="w-full bg-white border-b border-gray-100 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <!-- Mobile Back Button -->
+                    <a href="index.html" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-natureGreen hover:bg-natureGreen hover:text-white transition-all shadow-sm border border-gray-100 group" aria-label="Back to Home">
+                        <i data-lucide="chevron-left" class="w-6 h-6 transition-transform group-hover:-translate-x-0.5"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-12 w-auto object-contain" />
+                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight hidden sm:block">Sreemayil</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#about" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="training.html" class="text-natureGreen text-[14px] font-bold relative group">
+                        Training
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
+                    </a>
+                    <a href="catalog.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Products
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#contact" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-8 space-y-3">
+                <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
+                <a href="training.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Training</a>
+                <a href="catalog.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Products</a>
+                <div class="pt-4">
+                    <a href="index.html#contact" class="block w-full text-center px-6 py-4 bg-natureGreen text-white font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-md">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header / Hero -->
+    <header class="pt-32 pb-20 bg-natureGreen text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="assets/images/training-classroom.jpg" alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/20 text-earthyCream border border-white/30 text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">Professional Skill Development</span>
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+                Skill-Based Training on <br class="hidden md:block"> <span class="text-earthyCream">Herbal Soap Manufacturing</span>
+            </h1>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto font-light leading-relaxed">
+                Empowering the next generation of eco-entrepreneurs with practical knowledge and traditional wisdom.
+            </p>
+        </div>
+    </header>
+
+    <!-- Course Overview -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl group">
+                    <img src="assets/images/training-classroom.jpg" alt="Students engaged in soap making training" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-natureGreen/10"></div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-natureGreen mb-6">Course Overview</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        This is a hands-on practical training course meticulously designed for students and aspiring entrepreneurs. Our program bridges the gap between theoretical knowledge and practical skill, providing participants with the tools they need to launch their own sustainable ventures.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-natureGreen/10 rounded-xl flex items-center justify-center text-natureGreen flex-shrink-0">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-900 mb-1">Objectives</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-natureGreen"></i> Practical knowledge in natural soap making</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-natureGreen"></i> Promoting entrepreneurial skills</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-natureGreen"></i> Sustainable product development</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-natureGreen/10 rounded-xl flex items-center justify-center text-natureGreen flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-900 mb-1">Duration & Schedule</h4>
+                                <p class="text-gray-600"><strong>10 Hours total</strong>, conducted over <strong>2 Days</strong> (6 hrs + 4 hrs) for deep practical immersion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Modules -->
+    <section class="py-24 bg-earthyCream/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-natureGreen">Training Syllabus</h2>
+                <p class="mt-4 text-lg text-gray-600">A comprehensive 7-module journey from basics to business.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Module 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 01</span>
+                    <h4 class="text-xl font-bold mb-3">Introduction</h4>
+                    <p class="text-gray-600 text-sm">Fundamentals of natural living and the science of soap.</p>
+                </div>
+                <!-- Module 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 02</span>
+                    <h4 class="text-xl font-bold mb-3">Raw Materials</h4>
+                    <p class="text-gray-600 text-sm">Understanding oils, butters, and herbal additives.</p>
+                </div>
+                <!-- Module 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 03</span>
+                    <h4 class="text-xl font-bold mb-3">Cold Process</h4>
+                    <p class="text-gray-600 text-sm">Mastering the traditional cold process manufacturing method.</p>
+                </div>
+                <!-- Module 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 04</span>
+                    <h4 class="text-xl font-bold mb-3">Herbal Value Addition</h4>
+                    <p class="text-gray-600 text-sm">Infusing traditional medicinal herbs into your products.</p>
+                </div>
+                <!-- Module 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 05</span>
+                    <h4 class="text-xl font-bold mb-3">Packaging & Branding</h4>
+                    <p class="text-gray-600 text-sm">Eco-friendly packaging and brand identity creation.</p>
+                </div>
+                <!-- Module 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 06</span>
+                    <h4 class="text-xl font-bold mb-3">Entrepreneurship</h4>
+                    <p class="text-gray-600 text-sm">Business setup, legalities, and rural marketing strategies.</p>
+                </div>
+                <!-- Module 7 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow lg:col-span-2">
+                    <span class="text-natureGreen font-bold text-sm uppercase tracking-widest mb-4 block">Module 07</span>
+                    <h4 class="text-xl font-bold mb-3">Interactive Q&A</h4>
+                    <p class="text-gray-600 text-sm">Clearing doubts and finalizing your business roadmap with expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Covered -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-16">10 Varieties You Will Learn</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Charcoal</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Manjistha</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Rose</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Sandal</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Turmeric</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Neem</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Aloe Vera</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Acalypha</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Papaya</div>
+                <div class="p-6 bg-earthyCream rounded-2xl font-bold text-natureGreen">Goat Milk</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Demonstration -->
+    <section class="py-24 bg-natureGreen text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Expert-Led Practical Demonstration</h2>
+                    <p class="text-lg text-white/80 mb-8 leading-relaxed">
+                        Watch and learn as Mayilsamy. T demonstrates the intricate balance of herbal extracts and traditional cold-press techniques. This is not just a lecture; it's an immersive experience in the art of wellness.
+                    </p>
+                    <div class="bg-white/10 p-8 rounded-3xl border border-white/20">
+                        <h4 class="font-bold text-xl mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="text-natureGreen-accent"></i> Trainer Profile</h4>
+                        <p class="text-earthyCream font-bold text-lg mb-1">Mayilsamy. T</p>
+                        <p class="text-sm text-white/60 uppercase tracking-widest mb-4">Founder & Lead Expert</p>
+                        <p class="text-white/80 leading-relaxed italic">
+                            "With over 5 years of expertise in organic farming and rural entrepreneurship, I am dedicated to sharing the wisdom of traditional natural living with the modern world."
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative rounded-[2rem] overflow-hidden shadow-2xl group">
+                    <img src="assets/images/mayil-samy-image.jpeg" alt="Trainer demonstrating soap making" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-natureGreen/10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits to Institution -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-natureGreen/5 rounded-[3rem] p-10 lg:p-20 text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-natureGreen mb-12">Benefits to Educational Institutions</h2>
+                <div class="grid md:grid-cols-2 gap-12 text-left">
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-natureGreen text-white rounded-2xl flex items-center justify-center flex-shrink-0"><i data-lucide="award" class="w-8 h-8"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">NEP Skill-Based Learning</h4>
+                            <p class="text-gray-600">Our training supports the National Education Policy's focus on vocational and skill-based education.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-natureGreen text-white rounded-2xl flex items-center justify-center flex-shrink-0"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Enhanced Practical Exposure</h4>
+                            <p class="text-gray-600">Students gain real-world manufacturing experience and insight into rural business development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <!--section id="contact" class="py-24 bg-natureGreen-dark text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-heading font-bold mb-8">Ready to Empower Your Students?</h2>
+            <p class="text-xl text-white/60 mb-12">Contact us today to schedule a workshop or inquire about our training programs.</p>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center">
+                    <i data-lucide="phone" class="w-8 h-8 text-natureGreen-accent mb-4"></i>
+                    <p class="text-sm text-white/40 uppercase mb-1">Call / WhatsApp</p>
+                    <a href="tel:+919944019149" class="text-2xl font-bold hover:text-natureGreen-accent transition-colors">+91 9944019149</a>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center">
+                    <i data-lucide="mail" class="w-8 h-8 text-natureGreen-accent mb-4"></i>
+                    <p class="text-sm text-white/40 uppercase mb-1">Email Inquiry</p>
+                    <a href="mailto:sreemayil.lifestylecentre@gmail.com" class="text-xl font-bold hover:text-natureGreen-accent transition-colors">sreemayil.lifestylecentre@gmail.com</a>
+                </div>
+            </div>
+            <a href="https://wa.me/919944019149" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-white text-natureGreen font-bold rounded-full hover:bg-natureGreen-accent hover:text-white transition-all text-xl shadow-2xl">
+                Register on WhatsApp <i data-lucide="message-circle" class="ml-2 w-6 h-6"></i>
+            </a>
+        </div>
+    </section-->
+
+    <!-- Comprehensive Footer -->
+    <footer class="bg-[#1a3317] pt-20 pb-10 text-white border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand Identity -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-16 w-auto object-contain bg-white rounded-md p-0.5" />
+                        <span class="font-heading font-bold text-2xl tracking-tight">SreeMayil</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 max-w-xs">
+                        Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Navigation -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Home</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">About Us</a></li>
+                        <li><a href="training.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Training Workshops</a></li>
+                        <li><a href="catalog.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Product Catalog</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Information -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 text-sm text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <span>SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110.</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="tel:+919644010140" class="hover:text-natureGreen transition-colors">+91 9644010140</a>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="mailto:sreemayillifestyle@gmail.com" class="hover:text-natureGreen transition-colors">sreemayillifestyle@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: WhatsApp CTA -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Official Support
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+                        Have questions? Chat with us directly on WhatsApp for quick assistance.
+                    </p>
+                    <a href="https://wa.me/919644010140" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#25D366]/20 transition-all transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-10 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-xs tracking-widest uppercase">
+                    &copy; 2026 SreeMayil Lifestyle Centre. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
