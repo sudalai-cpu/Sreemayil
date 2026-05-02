@@ -262,6 +262,84 @@ h1, h2, h3, h4, h5, h6 {
         overflow: hidden;
     }
 
+    /* Course Overview Image Optimization - Circular & Larger */
+    .overview-img-container {
+        width: 200px !important;
+        height: 200px !important;
+        border-radius: 50% !important;
+        margin: 0 auto 25px auto !important;
+        border: 5px solid #ffffff !important;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important; /* Remove any padding */
+    }
+
+    .overview-img-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        margin: 0 !important; /* Remove any margins */
+        display: block !important;
+    }
+
+    /* Adjust Course Overview Heading */
+    #training-overview-h2,
+    .py-24 h2.text-natureGreen {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Benefits Section Fixes */
+    #benefits .p-10,
+    #benefits .lg\:p-20 {
+        padding: 25px 15px !important;
+        border-radius: 2rem !important;
+    }
+
+    #benefits h2 {
+        font-size: 22px !important;
+        margin-bottom: 32px !important;
+        line-height: 1.3 !important;
+        padding: 0 10px !important;
+    }
+
+    #benefits .grid {
+        gap: 25px !important;
+    }
+
+    #benefits .flex.gap-6 {
+        gap: 15px !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    #benefits div[class*="w-16"] {
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 12px !important;
+    }
+
+    #benefits i {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    #benefits h4 {
+        font-size: 16px !important;
+        margin-bottom: 6px !important;
+        font-weight: 700 !important;
+    }
+
+    #benefits p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
     /* Training Syllabus Section Fixes - 2 Column Layout */
     #syllabus .grid {
         display: grid !important;
@@ -370,17 +448,35 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     footer .grid {
-        gap: 30px !important;
-        margin-bottom: 30px !important;
+        gap: 25px !important; /* Reduced gap */
+        margin-bottom: 25px !important;
     }
 
     footer .flex-col {
         align-items: center !important;
     }
 
+    /* Footer Logo & Brand Block */
+    footer .flex.items-center.gap-3 {
+        justify-content: center !important;
+        margin-bottom: 15px !important;
+    }
+
     footer img {
-        height: 48px !important;
-        margin-bottom: 12px !important;
+        height: 50px !important; /* Scaled down logo */
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    footer span.text-2xl {
+        font-size: 20px !important;
+    }
+
+    footer p.text-gray-300 {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
+        max-width: 100% !important;
     }
 
     footer h4 {
@@ -388,17 +484,22 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 16px !important;
     }
 
-    footer ul {
-        space-y-3 !important; /* Tailwind doesn't work well with important in CSS sometimes, so I'll target li */
+    footer ul li {
+        margin-bottom: 8px !important;
     }
 
-    footer ul li {
-        margin-bottom: 10px !important;
+    /* Centered WhatsApp Button in Footer */
+    footer a[href*="wa.me"] {
+        width: auto !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
+        padding: 12px 24px !important;
+        font-size: 14px !important;
     }
 
     footer .flex.gap-4 {
         justify-content: center !important;
-        margin-top: 10px !important;
+        margin-top: 5px !important;
     }
 
     footer a.w-10.h-10 {
@@ -461,5 +562,85 @@ h1, h2, h3, h4, h5, h6 {
     .max-w-7xl {
         padding-left: 15px !important;
         padding-right: 15px !important;
+    }
+}
+
+/* FINAL FORCE OVERRIDE FOR MOBILE FOOTER (Infinix Zero 5G - 393px) */
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 10px !important;
+        text-align: center !important;
+    }
+
+    footer .max-w-7xl {
+        padding: 0 !important;
+    }
+
+    /* Force Logo & Brand Center Stack */
+    footer .flex.items-center.gap-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin: 0 auto 15px auto !important;
+        width: 100% !important;
+    }
+
+    footer img {
+        max-height: 60px !important;
+        height: 60px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    footer span {
+        display: inline-block !important;
+        margin: 0 !important;
+    }
+
+    /* Force Headings and Lists Center */
+    footer h3, footer h4, footer h5 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    footer ul {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    footer ul li {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 8px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    footer ul li i {
+        flex-shrink: 0 !important;
+    }
+
+    /* WhatsApp Button Centering */
+    footer a[href*="wa.me"] {
+        display: flex !important;
+        margin: 15px auto !important;
+        width: fit-content !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    /* Copyright Text */
+    footer p.text-gray-500, footer .text-xs {
+        font-size: 10px !important;
+        margin-top: 15px !important;
+        display: block !important;
+        text-align: center !important;
     }
 }
