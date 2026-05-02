@@ -66,3 +66,321 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Precise Responsive Fix for About Section (Target: 393px Width) */
+@media (max-width: 480px) {
+    /* Force grids in major sections to stack vertically */
+    .grid:not(.product-grid):not(.product-grid-mobile):not(.grid-cols-2),
+    #about .grid,
+    section[id*="about"] .grid,
+    #contact .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    /* Target images within About/Who We Are sections */
+    #about img,
+    section[id*="about"] img,
+    .about-image {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+    }
+
+    /* Stacking Fix: Profile card (Mayilsamy T) should move below the image */
+    #about .relative.rounded-3xl.overflow-hidden,
+    section[id*="about"] .relative.rounded-3xl.overflow-hidden {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    #about .glass-dark,
+    section[id*="about"] .glass-dark {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        background: #1e3d1a !important; /* Solid background for clarity */
+        backdrop-filter: none !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+    }
+
+    /* Product Card Responsiveness Fix - 2 Column Layout */
+    .product-grid-mobile,
+    .product-grid,
+    .grid.grid-cols-2 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+
+    .product-card,
+    .product-card-mobile {
+        width: 100% !important;
+        max-width: none !important; 
+        padding: 8px !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* Premium Image Scaling - Full Cover */
+    .product-image-container,
+    .product-image-container-mobile {
+        height: 180px !important;
+        margin-bottom: 8px !important;
+        border-radius: 6px !important;
+        overflow: hidden !important;
+    }
+
+    .product-card img,
+    .product-card-mobile img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .product-title,
+    .product-title-mobile {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        line-height: 1.3 !important;
+        font-size: 14px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .product-tagline,
+    .product-tagline-mobile {
+        font-size: 11px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .product-btn,
+    .product-btn-mobile {
+        font-size: 12px !important;
+        padding: 6px 0 !important;
+    }
+
+    /* About Section Spacing Fix */
+    #about .grid > div:first-child,
+    section[id*="about"] .grid > div:first-child {
+        margin-bottom: 20px !important;
+    }
+
+    /* Contact Section Fixes */
+    #contact .p-10,
+    #contact .lg\:p-16 {
+        padding: 24px 16px !important;
+    }
+
+    #contact h2 {
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+    }
+
+    #contact p,
+    #contact a {
+        word-break: break-word !important;
+        line-height: 1.6 !important;
+    }
+
+    #contact .space-y-8 > div {
+        gap: 12px !important;
+    }
+
+    /* Floating WhatsApp Button */
+    .wa-float-btn {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+    }
+
+    .wa-float-btn i {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* Key Offerings / Services Section Fix - 2 Column Layout */
+    #services .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        padding: 0 !important;
+    }
+
+    #services .grid > div {
+        padding: 15px !important;
+        border-radius: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    #services .grid div[class*="w-16"] {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    #services .grid i {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    #services h4 {
+        font-size: 14px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.2 !important;
+    }
+
+    #services p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Navbar Logo & Brand Text Fix */
+    nav#navbar span.hidden.sm\:block {
+        display: inline-block !important;
+        font-size: 18px !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    nav#navbar img {
+        height: 32px !important; /* Slightly smaller to fit with text */
+        width: auto !important;
+    }
+
+    nav#navbar .flex.items-center.gap-3 {
+        gap: 8px !important;
+    }
+
+    /* Ensure high z-index and fixed position if needed */
+    nav#navbar {
+        z-index: 1000 !important;
+        position: sticky !important;
+        top: 0 !important;
+    }
+
+    /* Training Page Specific: Adjust back button size to save space */
+    nav#navbar .md\:hidden.flex.items-center.justify-center.w-10.h-10 {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    /* Footer Optimization Fixes */
+    footer {
+        padding-top: 40px !important;
+        padding-bottom: 20px !important;
+        text-align: center !important;
+    }
+
+    footer .grid {
+        gap: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    footer .flex-col {
+        align-items: center !important;
+    }
+
+    footer img {
+        height: 48px !important;
+        margin-bottom: 12px !important;
+    }
+
+    footer h4 {
+        margin-bottom: 20px !important;
+        font-size: 16px !important;
+    }
+
+    footer ul {
+        space-y-3 !important; /* Tailwind doesn't work well with important in CSS sometimes, so I'll target li */
+    }
+
+    footer ul li {
+        margin-bottom: 10px !important;
+    }
+
+    footer .flex.gap-4 {
+        justify-content: center !important;
+        margin-top: 10px !important;
+    }
+
+    footer a.w-10.h-10 {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    footer i {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    /* Bottom Bar Fixes */
+    footer div.pt-10.border-t {
+        padding-top: 20px !important;
+    }
+
+    footer p.text-xs {
+        font-size: 10px !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    /* Training/Header Banner Fixes */
+    header.pt-32.pb-20,
+    header.bg-natureGreen {
+        padding-top: 80px !important;
+        padding-bottom: 40px !important;
+        height: auto !important;
+        min-height: 320px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    header h1 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    header p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        padding: 0 10px !important;
+    }
+
+    header span.inline-block {
+        font-size: 10px !important;
+        padding: 4px 12px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Prevent horizontal scroll and ensure margin */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100%;
+        position: relative;
+    }
+
+    .max-w-7xl {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
