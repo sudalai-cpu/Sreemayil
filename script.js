@@ -81,4 +81,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startAutoPlay();
     }
+
+    // Gallery Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    window.openLightbox = (src) => {
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeLightbox = () => {
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (lightbox) {
+        lightbox.addEventListener('click', closeLightbox);
+    }
 });

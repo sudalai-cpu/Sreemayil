@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     .product-card-mobile img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
     }
 
     .product-title,
@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
     .overview-img-container img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
         object-position: center !important;
         margin: 0 !important; /* Remove any margins */
         display: block !important;
@@ -396,8 +396,8 @@ h1, h2, h3, h4, h5, h6 {
     /* Ensure images in any grid card are proportional */
     .grid > div img {
         width: 100% !important;
-        height: 120px !important;
-        object-fit: cover !important;
+        height: auto !important;
+        object-fit: contain !important;
         border-radius: 8px !important;
         margin-bottom: 10px !important;
     }
