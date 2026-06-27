@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sreemayil Lifestyle Centre | Natural & Herbal Wellness</title>
+    <title>SreeMayil Lifestyle Centre | Natural & Herbal Wellness</title>
     <meta name="description"
-        content="Empowering you to lead a chemical-free, healthy, and eco-friendly lifestyle. Discover natural wellness, herbal soap making, and traditional training at Sreemayil.">
+        content="Empowering communities to lead chemical-free, sustainable lifestyles. Join SreeMayil for natural product training, herbal soap making workshops, and organic farming guidance.">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
@@ -24,7 +24,7 @@
                             DEFAULT: '#2D5A27',
                             light: '#4A7C44',
                             dark: '#1E3D1A',
-                            accent: '#A3E635' // Lime-green highlight
+                            accent: '#A3E635'
                         },
                         earthyCream: {
                             DEFAULT: '#FDFAF5',
@@ -47,113 +47,63 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Custom Styles -->
-    <style>
-        .product-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 8px;
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-            border: 1px solid #f1f1f1;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .product-card:hover {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
-        }
-        .product-image-container {
-            width: 100%;
-            height: 180px;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .product-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .product-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 2px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .product-tagline {
-            font-size: 12px;
-            color: #2d5a27;
-            margin-bottom: 10px;
-        }
+    <!-- FontAwesome CDN for Brand Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        @media (max-width: 640px) {
-            .product-grid-mobile {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-                padding: 6px;
-            }
-            .product-card-mobile {
-                width: calc(50% - 8px);
-                max-width: none;
-                padding: 5px;
-            }
-            .product-image-container-mobile {
-                height: 130px;
-                margin-bottom: 6px;
-            }
-            .product-title-mobile {
-                font-size: 14px;
-            }
-            .product-tagline-mobile {
-                font-size: 10px;
-                margin-bottom: 8px;
-            }
-            .product-btn-mobile {
-                font-size: 12px;
-                padding: 6px 0;
-            }
+    <!-- Custom Styles for Scroll Animations and Premium Touch -->
+    <style>
+        /* Infinitely-scrolling horizontal marquee styling */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
 
-<body class="bg-earthyCream text-gray-800 antialiased">
+<body class="bg-earthyCream text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- SECTION 1: TOP ANNOUNCEMENT BAR -->
+    <a href="events.html" class="block w-full bg-natureGreen-dark text-white hover:bg-natureGreen transition-all text-xs font-semibold py-2.5 px-4 text-center border-b border-white/10 relative z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-1.5 flex-wrap">
+            <span class="inline-block w-2 h-2 rounded-full bg-natureGreen-accent animate-ping"></span>
+            <span>Join our upcoming natural lifestyle workshops.</span>
+            <span class="text-natureGreen-accent underline hover:text-white transition-colors flex items-center gap-0.5">
+                Explore Events <i data-lucide="arrow-right" class="w-3.5 h-3.5 inline"></i>
+            </span>
+        </div>
+    </a>
 
     <!-- Navigation -->
-    <nav class="w-full bg-white border-b border-gray-100 z-50" id="navbar">
+    <nav class="w-full bg-white border-b border-gray-100 z-50 sticky top-0 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-3">
-
-                        <!-- <img src="assets/images/logo.jpeg" alt="Logo" class="h-12 w-auto object-contain" />-->
                         <img src="assets/images/brandlogo-text.png" alt="Logo" class="h-12 w-auto object-contain" />
-
-                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight hidden sm:block"></span>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                    <a href="index.html" class="text-natureGreen text-[14px] font-bold relative group">
                         Home
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
                     </a>
                     <a href="about.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="training.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
-                        Training
+                    <a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Gallery
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
                     <a href="catalog.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
@@ -164,18 +114,15 @@
                         Events
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
-                   <!--<a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
-                        Gallery
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
-                    </a>-->
-                    <a href="#contact" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">
+
+                    <a href="contact.html" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">
                         Contact
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors" aria-label="Open Menu">
                         <i data-lucide="menu" class="h-7 w-7"></i>
                     </button>
                 </div>
@@ -187,12 +134,11 @@
             <div class="px-4 pt-4 pb-8 space-y-3">
                 <a href="index.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Home</a>
                 <a href="about.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
-                <a href="training.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Training</a>
+                <a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>
                 <a href="catalog.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Products</a>
                 <a href="events.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Events</a>
-                <!--<a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>-->
                 <div class="pt-4">
-                    <a href="#contact" class="block w-full text-center px-6 py-4 bg-natureGreen text-white font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-md">
+                    <a href="contact.html" class="block w-full text-center px-6 py-4 bg-natureGreen text-white font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-md">
                         Contact Us
                     </a>
                 </div>
@@ -200,305 +146,485 @@
         </div>
     </nav>
 
-    <!-- Hero Section: Synced with Training Page Dimensions -->
-    <section id="home" class="relative w-full overflow-hidden z-10 bg-white">
-        <!-- Slider Container: Sleek Wide-Screen Height -->
-        <div id="hero-slider" class="relative w-full h-[300px] md:h-[450px] lg:h-[500px]">
-            <!-- Slide 1 -->
-            <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-                <img src="assets/images/Training-benner-1.png" alt="Sreemayil Herbal & Botanical Wellness"
-                    class="w-full h-full object-fill"
-                    onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1920&q=80'">
-            </div>
+    <!-- Main Content Area -->
+    <main class="flex-grow">
 
-            <!-- Slide 2 -->
-            <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                <img src="assets/images/Benner-2.png" alt="Pure Nature Soap Collection" 
-                    class="w-full h-full object-fill"
-                    onerror="this.src='https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1920&q=80'">
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                <img src="assets/images/Banner-3.jpeg" alt="Botanical Ingredients"
-                    class="w-full h-full object-fill"
-                    onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1920&q=80'">
-            </div>
-        </div>
-            <!-- Subtle Slider Navigation -->
-            <button id="prev-slide"
-                class="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-white/20 text-white hover:bg-natureGreen transition-all backdrop-blur-md border border-white/10 group">
-                <i data-lucide="chevron-left" class="w-5 h-5 md:w-6 h-6 group-hover:scale-110"></i>
-            </button>
-            <button id="next-slide"
-                class="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-white/20 text-white hover:bg-natureGreen transition-all backdrop-blur-md border border-white/10 group">
-                <i data-lucide="chevron-right" class="w-5 h-5 md:w-6 h-6 group-hover:scale-110"></i>
-            </button>
-
-            <!-- Navigation Dots -->
-            <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:gap-3">
-                <button class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-natureGreen scale-125 transition-all duration-300"
-                    aria-label="Slide 1"></button>
-                <button
-                    class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300"
-                    aria-label="Slide 2"></button>
-                <button
-                    class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300"
-                    aria-label="Slide 3"></button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Intro/Purpose Section -->
-    <section class="">
-        <!--div class="max-w-4xl mx-auto px-4 text-center relative z-10"-->
+        <!-- SECTION 2: HERO SLIDER / MAIN BANNER -->
+        <section class="bg-white py-12 md:py-20 border-b border-gray-50 relative overflow-hidden h-[640px] sm:h-[550px] md:h-[500px] lg:h-[480px]">
             
-            
-            
-
-            
-
-        
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Heading -->
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-serif-premium font-bold text-gray-900 mb-4">
-                    Crafting Change: <span class="text-natureGreen italic">The SreeMayil Story</span>
-                </h2>
-                <p class="text-natureGreen font-medium tracking-widest uppercase text-sm">Tradition meets Community Empowerment.</p>
-                <div class="flex justify-center mt-6">
-                    <div class="w-20 h-1 bg-natureGreen/20 rounded-full relative overflow-hidden">
-                        <div class="absolute inset-0 bg-natureGreen w-1/2"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
-                    <img src="assets/images/Team-About.png" alt="Mayilsamy T and Sreemayil Team"
-                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-                        onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80'">
-                    <div
-                        class="absolute inset-0 bg-natureGreen/10 group-hover:bg-transparent transition-colors duration-500">
-                    </div>
-                    <div class="absolute bottom-6 left-6 right-6 glass-dark p-6 rounded-2xl text-white">
-                        <p class="font-heading font-semibold text-xl mb-1 text-white">Mayilsamy T</p>
-                        <p class="text-sm text-earthyCream">Founder & Expert in Rural Entrepreneurship</p>
-                    </div>
-                </div>
-                <div>
-                    <h2
-                        class="text-sm font-bold text-natureGreen tracking-wider uppercase mb-3 flex items-center gap-2">
-                        <i data-lucide="sprout" class="w-4 h-4"></i> About Us
-                    </h2>
-                    <h3 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6 leading-tight">
-                        Dedicated to Natural Living and Rural Empowerment
-                    </h3>
-                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                        Located in the serene surroundings of <span class="font-semibold text-natureGreen">Thoranavavi,
-                            Erode</span>, Sreemayil Lifestyle Centre is dedicated to the promotion of natural living and
-                        holistic wellness.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Our mission is to empower individuals through traditional herbal knowledge, supporting
-                        self-employment, and fostering a community that values chemical-free, sustainable lifestyles.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-earthyCream/50 p-6 rounded-2xl border border-earthyCream">
-                            <div
-                                class="w-12 h-12 bg-natureGreen rounded-full flex items-center justify-center text-white mb-4 shadow-md">
-                                <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+            <!-- Slide 1: About Us -->
+            <div class="hero-slide absolute inset-0 opacity-100 transition-all duration-1000 flex items-center pointer-events-auto">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Left Side: Custom Organic Cutout Image Frame -->
+                        <div class="lg:col-span-6 relative w-full h-[220px] md:h-[350px]">
+                            <div class="absolute -inset-3 bg-natureGreen/5 rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] -rotate-2"></div>
+                            <div class="relative w-full h-full overflow-hidden rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] border-[6px] border-white shadow-xl bg-gray-50">
+                                <img src="assets/images/training-classroom.jpg" alt="Natural Product Training Classroom" class="w-full h-full object-cover">
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-2">Our Mission</h4>
-                            <p class="text-sm text-gray-600">Promoting chemical-free living through traditional
-                                practices.</p>
                         </div>
-                        <div class="bg-earthyCream/50 p-6 rounded-2xl border border-earthyCream">
-                            <div
-                                class="w-12 h-12 bg-natureGreen rounded-full flex items-center justify-center text-white mb-4 shadow-md">
-                                <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        <!-- Right Side: Content Block -->
+                        <div class="lg:col-span-6 space-y-6 lg:pl-6 text-left">
+                            <span class="inline-block px-3.5 py-1.5 bg-natureGreen/5 text-natureGreen text-xs font-bold uppercase tracking-wider rounded-md">Learn About Us</span>
+                            <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 leading-tight">
+                                Reviving Traditional Knowledge, <br><span class="text-natureGreen">Creating Sustainable Futures</span>
+                            </h2>
+                            <p class="text-base text-gray-600 leading-relaxed font-light">
+                                SreeMayil Lifestyle Centre promotes natural living, skill-based training, herbal product development, and sustainable practices through hands-on practical learning.
+                            </p>
+                            <div class="pt-2">
+                                <a href="about.html" class="px-8 py-3.5 bg-natureGreen hover:bg-natureGreen-light text-white font-bold rounded-xl transition-all shadow-md inline-flex items-center gap-2">
+                                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-2">Empowerment</h4>
-                            <p class="text-sm text-gray-600">Supporting rural youth and women through skill development.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Featured Collection (Trending) -->
-    <section class="py-24 bg-white border-t border-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-sm font-bold text-natureGreen tracking-wider uppercase mb-3 flex items-center justify-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i> Trending
-                </h2>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Our Natural Favorites</h3>
-                <div class="w-20 h-1 bg-natureGreen mx-auto rounded-full"></div>
-            </div>
-
-            <!-- Product Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 justify-items-center mb-16">
-                <!-- 1. Charcoal -->
-                <div class="product-card product-card-mobile flex flex-col">
-                    <div class="product-image-container product-image-container-mobile">
-                        <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Charcoal">
-                    </div>
-                    <div class="text-center flex flex-col flex-grow">
-                        <h4 class="product-title product-title-mobile">Herbal Hair Oil</h4>
-                        <p class="product-tagline product-tagline-mobile">Long Hair</p>
-                        <a href="https://wa.me/919944019149?text=Order Charcoal Soap" class="product-btn product-btn-mobile block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto py-2">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- 2. Manjistha -->
-                <div class="product-card product-card-mobile flex flex-col">
-                    <div class="product-image-container product-image-container-mobile">
-                        <img src="assets/images/Herbal-Tooyh-powder_Image.png" alt="Manjistha">
-                    </div>
-                    <div class="text-center flex flex-col flex-grow">
-                        <h4 class="product-title product-title-mobile">Herbal Tooth Powder</h4>
-                        <p class="product-tagline product-tagline-mobile">Bright Teeth</p>
-                        <a href="https://wa.me/919944019149?text=Order Manjistha Soap" class="product-btn product-btn-mobile block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto py-2">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- 3. Rose -->
-                <div class="product-card product-card-mobile flex flex-col">
-                    <div class="product-image-container product-image-container-mobile">
-                        <img src="assets/images/Coconut-oil_image - Copy.png" alt="Rose">
-                    </div>
-                    <div class="text-center flex flex-col flex-grow">
-                        <h4 class="product-title product-title-mobile">Coconut Oil Soup</h4>
-                        <p class="product-tagline product-tagline-mobile">Soft Skin</p>
-                        <a href="https://wa.me/919944019149?text=Order Rose Soap" class="product-btn product-btn-mobile block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto py-2">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- 4. Sandal -->
-                <div class="product-card product-card-mobile flex flex-col">
-                    <div class="product-image-container product-image-container-mobile">
-                        <img src="assets/images/Kuppaimeni-soup_image - Copy.png" alt="Sandal">
-                    </div>
-                    <div class="text-center flex flex-col flex-grow">
-                        <h4 class="product-title product-title-mobile">Kuppaimeni Soup</h4>
-                        <p class="product-tagline product-tagline-mobile">Traditional Glow</p>
-                        <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn product-btn-mobile block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto py-2">Order Now</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Explore More CTA -->
-            <div class="flex justify-center">
-                <a href="catalog.html" class="inline-flex items-center gap-2 px-10 py-4 border-2 border-natureGreen text-natureGreen font-bold rounded-full hover:bg-natureGreen hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg group">
-                    EXPLORE ALL PRODUCTS <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Offerings Section -->
-    <section id="services" class="py-24 bg-earthyCream/30 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2
-                    class="text-sm font-bold text-natureGreen tracking-wider uppercase mb-3 flex items-center justify-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i> What We Do
-                </h2>
-                <h3 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Key Offerings & Services</h3>
-                <p class="text-lg text-gray-600">Discover our range of natural products and traditional wellness
-                    services.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
-                    <div
-                        class="w-16 h-16 bg-earthyCream rounded-2xl flex items-center justify-center text-natureGreen mb-6 group-hover:bg-natureGreen group-hover:text-white transition-colors">
-                        <i data-lucide="droplet" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3">Herbal Soap Making</h4>
-                    <p class="text-gray-600">Learn the art of creating 100% natural, chemical-free soaps using
-                        traditional herbs.</p>
-                </div>
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
-                    <div
-                        class="w-16 h-16 bg-earthyCream rounded-2xl flex items-center justify-center text-natureGreen mb-6 group-hover:bg-natureGreen group-hover:text-white transition-colors">
-                        <i data-lucide="flower-2" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3">Natural Skincare</h4>
-                    <p class="text-gray-600">Formulations derived from ancient wisdom for radiant skin and healthy hair.
-                    </p>
-                </div>
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
-                    <div
-                        class="w-16 h-16 bg-earthyCream rounded-2xl flex items-center justify-center text-natureGreen mb-6 group-hover:bg-natureGreen group-hover:text-white transition-colors">
-                        <i data-lucide="activity" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3">Varma Wellness</h4>
-                    <p class="text-gray-600">Experience natural pain relief through traditional Varma wellness
-                        practices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location Section -->
-    <section id="contact" class="py-24 bg-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-natureGreen-dark rounded-3xl overflow-hidden shadow-2xl relative text-white">
-                <div class="grid lg:grid-cols-2 relative z-10">
-                    <div class="p-10 lg:p-16 flex flex-col justify-center">
-                        <h2 class="text-3xl md:text-5xl font-heading font-bold mb-8 text-white">Get in Touch</h2>
-                        <div class="space-y-8">
-                            <div class="flex items-start gap-5">
-                                <i data-lucide="map-pin" class="w-6 h-6 text-natureGreen-accent"></i>
-                                <div>
-                                    <h5 class="font-bold text-xl mb-1 text-earthyCream">Location</h5>
-                                    <p class="text-white/80">SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110</p>
-                                </div>
+            <!-- Slide 2: Our Events -->
+            <div class="hero-slide absolute inset-0 opacity-0 transition-all duration-1000 flex items-center pointer-events-none">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Left Side: Custom Organic Cutout Image Frame -->
+                        <div class="lg:col-span-6 relative w-full h-[220px] md:h-[350px]">
+                            <div class="absolute -inset-3 bg-natureGreen/5 rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] -rotate-2"></div>
+                            <div class="relative w-full h-full overflow-hidden rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] border-[6px] border-white shadow-xl bg-gray-50">
+                                <img src="assets/images/Slide_Image_1.jpeg" alt="Organic Farming Sessions" class="w-full h-full object-cover">
                             </div>
-                            <div class="flex items-start gap-5">
-                                <i data-lucide="phone" class="w-6 h-6 text-natureGreen-accent"></i>
-                                <div>
-                                    <h5 class="font-bold text-xl mb-1 text-earthyCream">Phone / WhatsApp</h5>
-                                    <p class="text-white/80">+91 9944019149</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-5">
-                                <i data-lucide="mail" class="w-6 h-6 text-natureGreen-accent"></i>
-                                <div>
-                                    <h5 class="font-bold text-xl mb-1 text-earthyCream">Email</h5>
-                                    <p class="text-white/80">sreemayil.santhai@gmail.com</p>
-                                </div>
+                        </div>
+                        <!-- Right Side: Content Block -->
+                        <div class="lg:col-span-6 space-y-6 lg:pl-6 text-left">
+                            <span class="inline-block px-3.5 py-1.5 bg-natureGreen/5 text-natureGreen text-xs font-bold uppercase tracking-wider rounded-md">Our Events</span>
+                            <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 leading-tight">
+                                Participate in Hands-on <br><span class="text-natureGreen">Traditional Workshops</span>
+                            </h2>
+                            <p class="text-base text-gray-600 leading-relaxed font-light">
+                                Connect with traditional practitioners, learn Siddha pulse diagnostics, kitchen remedies, and formulation techniques at our community camps.
+                            </p>
+                            <div class="pt-2">
+                                <a href="events.html" class="px-8 py-3.5 bg-natureGreen hover:bg-natureGreen-light text-white font-bold rounded-xl transition-all shadow-md inline-flex items-center gap-2">
+                                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-natureGreen p-10 lg:p-16 flex flex-col justify-center">
-                        <h4 class="text-2xl font-heading font-bold mb-6 text-white">Send us a Message</h4>
-                        <form class="space-y-4"
-                            onsubmit="event.preventDefault(); window.open('https://wa.me/919944019149', '_blank');">
-                            <input type="text" placeholder="Your Name"
-                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-natureGreen-accent transition-colors">
-                            <button type="submit"
-                                class="w-full px-8 py-4 bg-white text-natureGreen font-bold rounded-xl hover:bg-natureGreen-accent hover:text-white transition-all flex justify-center items-center gap-2 shadow-lg">
-                                Connect on WhatsApp <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            </button>
-                        </form>
+                </div>
+            </div>
+
+            <!-- Slide 3: Contact Us -->
+            <div class="hero-slide absolute inset-0 opacity-0 transition-all duration-1000 flex items-center pointer-events-none">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Left Side: Custom Organic Cutout Image Frame -->
+                        <div class="lg:col-span-6 relative w-full h-[220px] md:h-[350px]">
+                            <div class="absolute -inset-3 bg-natureGreen/5 rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] -rotate-2"></div>
+                            <div class="relative w-full h-full overflow-hidden rounded-tl-[100px] rounded-br-[100px] rounded-tr-[40px] rounded-bl-[40px] border-[6px] border-white shadow-xl bg-gray-50">
+                                <img src="assets/images/Team-About.png" alt="SreeMayil Team Support" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Right Side: Content Block -->
+                        <div class="lg:col-span-6 space-y-6 lg:pl-6 text-left">
+                            <span class="inline-block px-3.5 py-1.5 bg-natureGreen/5 text-natureGreen text-xs font-bold uppercase tracking-wider rounded-md">Get In Touch</span>
+                            <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 leading-tight">
+                                Start Your Journey in <br><span class="text-natureGreen">Natural Living Today</span>
+                            </h2>
+                            <p class="text-base text-gray-600 leading-relaxed font-light">
+                                Have questions about custom training recipes or organic consultation programs? We are here to support your self-reliance goals.
+                            </p>
+                            <div class="pt-2">
+                                <a href="contact.html" class="px-8 py-3.5 bg-natureGreen hover:bg-natureGreen-light text-white font-bold rounded-xl transition-all shadow-md inline-flex items-center gap-2">
+                                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <!-- Mini Navigation Controls -->
+            <div class="absolute bottom-4 right-8 md:right-16 lg:right-24 z-30 flex gap-2">
+                <button id="prev-slide" class="w-9 h-9 rounded-full bg-white/90 shadow-md text-natureGreen hover:bg-natureGreen hover:text-white transition-colors flex items-center justify-center border border-gray-150" aria-label="Previous Slide">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button id="next-slide" class="w-9 h-9 rounded-full bg-white/90 shadow-md text-natureGreen hover:bg-natureGreen hover:text-white transition-colors flex items-center justify-center border border-gray-150" aria-label="Next Slide">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 3: VISION MISSION VALUES -->
+        <section class="py-16 md:py-24 bg-earthyCream/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-natureGreen mb-2 block">Our Foundations</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900">What Guides SreeMayil</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Vision Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-natureGreen/5 text-natureGreen rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="eye" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-gray-900 mb-3">Our Vision</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Promote sustainable living by connecting traditional knowledge with modern lifestyle.
+                        </p>
+                    </div>
+
+                    <!-- Mission Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-natureGreen/5 text-natureGreen rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-gray-900 mb-3">Our Mission</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Provide practical training, natural product knowledge and entrepreneurship opportunities.
+                        </p>
+                    </div>
+
+                    <!-- Values Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-natureGreen/5 text-natureGreen rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-gray-900 mb-3">Our Values</h3>
+                        <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold text-gray-600">
+                            <span class="px-2.5 py-1 bg-gray-50 rounded-md border border-gray-100">• Sustainability</span>
+                            <span class="px-2.5 py-1 bg-gray-50 rounded-md border border-gray-100">• Traditional Knowledge</span>
+                            <span class="px-2.5 py-1 bg-gray-50 rounded-md border border-gray-100">• Quality</span>
+                            <span class="px-2.5 py-1 bg-gray-50 rounded-md border border-gray-100">• Community Empowerment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: IMAGE GALLERY STRIP -->
+        <section class="py-12 bg-white overflow-hidden border-t border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+                <span class="text-xs font-bold text-natureGreen uppercase tracking-wider">In Action</span>
+                <h3 class="text-xl md:text-2xl font-heading font-bold text-gray-900 mt-1">Real Training & Campus Activities</h3>
+            </div>
+            
+            <div class="relative w-full overflow-hidden select-none">
+                <!-- Smooth fading overlays on left and right bounds -->
+                <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                
+                <!-- Infinite Scroll Loop Container -->
+                <div class="animate-marquee gap-4 px-4 flex">
+                    <!-- Real images from the assets folder -->
+                    <img src="assets/images/training-classroom.jpg" alt="Training" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Team-About.png" alt="Team Work" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/soap-aloevera.jpg" alt="Aloe Soap Formulation" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/mayil-samy-image.jpeg" alt="Practical Instructing" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/gallery/soap.png" alt="Herbal Soap Making" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Neam-Alovera-soup_image.png" alt="Herbal Formulations" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Botanical Oils" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    
+                    <!-- Duplicated set for seamless loop -->
+                    <img src="assets/images/training-classroom.jpg" alt="Training" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Team-About.png" alt="Team Work" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/soap-aloevera.jpg" alt="Aloe Soap Formulation" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/mayil-samy-image.jpeg" alt="Practical Instructing" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/gallery/soap.png" alt="Herbal Soap Making" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Neam-Alovera-soup_image.png" alt="Herbal Formulations" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                    <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Botanical Oils" class="h-44 w-64 object-cover rounded-xl shadow-sm border border-gray-100 flex-shrink-0">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: EXPLORE SREEMAYIL (Alternating Sections) -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+                
+                <!-- Card 1: Natural Product Training (Image Left) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-1 md:order-1 relative">
+                        <div class="absolute -inset-3 bg-natureGreen/5 rounded-2xl rotate-1"></div>
+                        <img src="assets/images/gallery/soap.png" alt="Herbal Product Formulation" class="relative w-full h-[280px] md:h-[350px] object-cover rounded-2xl shadow-md">
+                    </div>
+                    <div class="order-2 md:order-2 space-y-4">
+                        <span class="text-xs font-bold text-natureGreen uppercase tracking-wider">01. Practical Skill Programs</span>
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-gray-900">Natural Product Training</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed font-light">
+                            Learn practical skills in herbal soap manufacturing (cold process formulations), natural personal care products (face packs, hair oils), and sustainable product creation. Gain confidence to formulate independently.
+                        </p>
+                        <div class="pt-2">
+                            <a href="gallery.html" class="inline-flex items-center gap-2 text-sm font-bold text-natureGreen hover:text-natureGreen-light transition-colors group">
+                                Explore Gallery <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Organic Farming (Image Right) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 space-y-4">
+                        <span class="text-xs font-bold text-natureGreen uppercase tracking-wider">02. Agriculture & Gardens</span>
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-gray-900">Organic Farming</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed font-light">
+                            Learn natural farming methods, home kitchen gardening, and sustainable agriculture practices. We provide structured guidance for agricultural projects and natural pesticide preparations.
+                        </p>
+                        <div class="pt-2">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-bold text-natureGreen hover:text-natureGreen-light transition-colors group">
+                                Explore Projects <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 relative">
+                        <div class="absolute -inset-3 bg-natureGreen/5 rounded-2xl -rotate-1"></div>
+                        <img src="assets/images/training-classroom.jpg" alt="Sustainable Farm Instruction" class="relative w-full h-[280px] md:h-[350px] object-cover rounded-2xl shadow-md">
+                    </div>
+                </div>
+
+                <!-- Card 3: Events & Workshops (Image Left) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-1 md:order-1 relative">
+                        <div class="absolute -inset-3 bg-natureGreen/5 rounded-2xl rotate-1"></div>
+                        <img src="assets/images/Slide_Image_2 (2).jpeg" alt="Hands-on Workshop Interactions" class="relative w-full h-[280px] md:h-[350px] object-cover rounded-2xl shadow-md">
+                    </div>
+                    <div class="order-2 md:order-2 space-y-4">
+                        <span class="text-xs font-bold text-natureGreen uppercase tracking-wider">03. Group Learning</span>
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-gray-900">Events & Workshops</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed font-light">
+                            Participate in hands-on workshops focused on traditional knowledge and practical skill sharing. Engage in structured group activities led by expert facilitators.
+                        </p>
+                        <div class="pt-2">
+                            <a href="events.html" class="inline-flex items-center gap-2 text-sm font-bold text-natureGreen hover:text-natureGreen-light transition-colors group">
+                                View Events <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Community & Awareness (Image Right) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 space-y-4">
+                        <span class="text-xs font-bold text-natureGreen uppercase tracking-wider">04. Self-Reliance</span>
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-gray-900">Community & Awareness</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed font-light">
+                            Join activities promoting healthy lifestyle choices, natural living, and environmental awareness. We help women and rural youth establish home enterprises using local, organic ingredients.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 relative">
+                        <div class="absolute -inset-3 bg-natureGreen/5 rounded-2xl -rotate-1"></div>
+                        <img src="assets/images/team.jpg" alt="SreeMayil Community Support" class="relative w-full h-[280px] md:h-[350px] object-cover rounded-2xl shadow-md">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 6: WHY CHOOSE SREEMAYIL -->
+        <section class="py-16 md:py-24 bg-earthyCream/35 border-t border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-natureGreen mb-2 block">Our Advantages</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900">Why SreeMayil Lifestyle Centre?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Item 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div class="space-y-3">
+                            <span class="text-2xl">🌱</span>
+                            <h4 class="font-heading font-bold text-sm text-gray-900">Practical Learning</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light">Hands-on training instead of only theory.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div class="space-y-3">
+                            <span class="text-2xl">🌿</span>
+                            <h4 class="font-heading font-bold text-sm text-gray-900">Traditional Knowledge</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light">Connecting ancient practices with modern needs.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div class="space-y-3">
+                            <span class="text-2xl">🧼</span>
+                            <h4 class="font-heading font-bold text-sm text-gray-900">Natural Product Skills</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light">Learn formulation skills and business setup details.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div class="space-y-3">
+                            <span class="text-2xl">🚜</span>
+                            <h4 class="font-heading font-bold text-sm text-gray-900">Sustainable Farming</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light">Promoting chemical-free, natural agriculture.</p>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition-transform md:col-span-3 lg:col-span-1">
+                        <div class="space-y-3">
+                            <span class="text-2xl">👥</span>
+                            <h4 class="font-heading font-bold text-sm text-gray-900">Community Growth</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light">Creating new opportunities through shared skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: TRAINING IMPACT / ACHIEVEMENTS -->
+        <section class="py-16 bg-natureGreen text-white overflow-hidden relative">
+            <div class="absolute inset-0 opacity-5 pointer-events-none">
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <circle cx="20" cy="20" r="15" fill="white" />
+                </svg>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="stat-counters">
+                    <!-- Stat 1 -->
+                    <div class="space-y-1">
+                        <span class="block text-4xl md:text-5xl font-heading font-bold text-natureGreen-accent" data-target="1000">0</span>
+                        <span class="text-xs md:text-sm text-earthyCream/85 uppercase tracking-wider font-semibold">Students Trained</span>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="space-y-1">
+                        <span class="block text-4xl md:text-5xl font-heading font-bold text-natureGreen-accent" data-target="5">0</span>
+                        <span class="text-xs md:text-sm text-earthyCream/85 uppercase tracking-wider font-semibold">Years Experience</span>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="space-y-1">
+                        <span class="block text-4xl md:text-5xl font-heading font-bold text-natureGreen-accent" data-target="50">0</span>
+                        <span class="text-xs md:text-sm text-earthyCream/85 uppercase tracking-wider font-semibold">Workshops Conducted</span>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="space-y-1">
+                        <span class="block text-4xl md:text-5xl font-heading font-bold text-natureGreen-accent" data-target="12">0</span>
+                        <span class="text-xs md:text-sm text-earthyCream/85 uppercase tracking-wider font-semibold">Natural Care Programs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: SOCIAL MEDIA / ACTIVITY GALLERY -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-wider text-natureGreen mb-2 block">Gallery Grid</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900">Life at SreeMayil</h2>
+                </div>
+
+                <!-- Responsive 2/3/4 grid layout with Django template loops context -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+                    {% for image in recent_images %}
+                    <div class="group relative aspect-square overflow-hidden rounded-xl bg-gray-50 border border-gray-100 shadow-sm cursor-pointer">
+                        <img src="{{ image.image }}" alt="{{ image.title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
+                            <span class="text-[10px] uppercase font-bold text-natureGreen-accent mb-0.5">{{ image.year }}</span>
+                            <h4 class="font-heading font-bold text-xs leading-tight">{{ image.title }}</h4>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <!-- Standalone Static Fallbacks for visual correctness -->
+                    <div class="group relative aspect-square overflow-hidden rounded-xl bg-gray-50 border border-gray-100 shadow-sm cursor-pointer">
+                        <img src="assets/images/soap-aloevera.jpg" alt="Aloe Soap Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="group relative aspect-square overflow-hidden rounded-xl bg-gray-50 border border-gray-100">
+                        <img src="assets/images/soap-neem.jpg" alt="Neem Formulation Soap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="group relative aspect-square overflow-hidden rounded-xl bg-gray-50 border border-gray-100">
+                        <img src="assets/images/Neam-Alovera-soup_image.png" alt="Herbal Preparations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="group relative aspect-square overflow-hidden rounded-xl bg-gray-50 border border-gray-100">
+                        <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Natural Skincare Oils" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="gallery.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-natureGreen text-white font-bold rounded-xl hover:bg-natureGreen-light transition-all shadow-md">
+                        Follow SreeMayil <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: CALL TO ACTION -->
+        <section class="py-16 md:py-24 bg-earthyCream/30 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <div class="bg-natureGreen-dark text-white p-8 md:p-16 rounded-3xl shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-5 pointer-events-none">
+                        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0 0 L100 100 M100 0 L0 100" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <div class="relative z-10 space-y-6">
+                        <h2 class="text-3xl md:text-5xl font-heading font-bold">Learn. Create. Live Naturally.</h2>
+                        <p class="text-earthyCream/80 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                            Join SreeMayil Lifestyle Centre and become part of a sustainable, self-reliant future. Let's build chemical-free home enterprises together.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                            <a href="gallery.html" class="px-8 py-3.5 bg-natureGreen-accent text-natureGreen-dark font-bold rounded-xl hover:bg-white hover:text-natureGreen-dark transition-all shadow-md">
+                                Register Training
+                            </a>
+                            <a href="contact.html" class="px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold rounded-xl transition-all">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <!-- <section id="contact" class="py-16 md:py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-natureGreen-dark rounded-3xl overflow-hidden shadow-2xl relative text-white">
+                    <div class="grid lg:grid-cols-2 relative z-10">
+                        <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-8 text-white">Get in Touch</h2>
+                            <div class="space-y-6 md:space-y-8">
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-natureGreen-accent shrink-0 mt-1"></i>
+                                    <div>
+                                        <h5 class="font-bold text-lg mb-0.5 text-earthyCream">Location</h5>
+                                        <p class="text-white/80 text-sm">SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110, Tamil Nadu, India</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="phone" class="w-6 h-6 text-natureGreen-accent shrink-0 mt-1"></i>
+                                    <div>
+                                        <h5 class="font-bold text-lg mb-0.5 text-earthyCream">Phone / WhatsApp</h5>
+                                        <p class="text-white/80 text-sm">+91 99440 19149</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="mail" class="w-6 h-6 text-natureGreen-accent shrink-0 mt-1"></i>
+                                    <div>
+                                        <h5 class="font-bold text-lg mb-0.5 text-earthyCream">Email</h5>
+                                        <p class="text-white/80 text-sm">sreemayil.santhai@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-natureGreen p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                            <h4 class="text-2xl font-heading font-bold mb-6 text-white">Send us a Message</h4>
+                            <form class="space-y-4" onsubmit="event.preventDefault(); window.open('https://wa.me/919944019149', '_blank');">
+                                <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-natureGreen-accent transition-colors text-sm">
+                                <button type="submit" class="w-full px-8 py-3.5 bg-white text-natureGreen font-bold rounded-xl hover:bg-natureGreen-accent hover:text-white transition-all flex justify-center items-center gap-2 shadow-lg text-sm">
+                                    Connect on WhatsApp <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+    </main>
 
     <!-- Comprehensive Footer -->
-    <footer class="bg-[#1a3317] pt-20 pb-10 text-white border-t border-white/5">
+    <footer class="bg-[#1a3317] pt-16 pb-10 text-white border-t border-white/5 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Column 1: Brand Identity -->
@@ -511,68 +637,62 @@
                         Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
-                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                        <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
-                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                        <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
-                            <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                        <a href="https://www.youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Youtube">
+                            <i class="fab fa-youtube text-lg group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://wa.me/919944019149" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp text-lg group-hover:text-white transition-colors"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Navigation -->
+                <!-- Column 2: Quick Links -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
-                        Quick Links
-                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
-                    </h4>
-                    <ul class="space-y-4">
+                    <h4 class="font-heading font-bold text-md tracking-wider uppercase mb-6 text-natureGreen-accent">Quick Links</h4>
+                    <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Home</a></li>
                         <li><a href="about.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">About Us</a></li>
-                        <li><a href="training.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Training Workshops</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Gallery</a></li>
                         <li><a href="catalog.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Product Catalog</a></li>
-                        <li><a href="index.html#contact" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Contact Us</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Events & Camps</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Contact Information -->
+                <!-- Column 3: Contact Info -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
-                        Get In Touch
-                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
-                    </h4>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4 text-sm text-gray-300">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen shrink-0"></i>
-                            <span>SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110.</span>
+                    <h4 class="font-heading font-bold text-md tracking-wider uppercase mb-6 text-natureGreen-accent">Get in Touch</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start gap-3 justify-center md:justify-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen-accent shrink-0"></i>
+                            <span>SreeMayil Lifestyle Centre,<br>Erode, Tamil Nadu, India</span>
                         </li>
-                        <li class="flex items-center gap-4 text-sm text-gray-300">
-                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen shrink-0"></i>
-                            <a href="tel:+919944019149" class="hover:text-natureGreen transition-colors">+91 9944019149</a>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen-accent shrink-0"></i>
+                            <span>+91 99440 19149</span>
                         </li>
-                        <li class="flex items-center gap-4 text-sm text-gray-300">
-                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen shrink-0"></i>
-                            <a href="mailto:sreemayil.santhai@gmail.com" class="hover:text-natureGreen transition-colors">sreemayil.santhai@gmail.com</a>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen-accent shrink-0"></i>
+                            <span>contact@sreemayil.com</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Column 4: WhatsApp CTA -->
+                <!-- Column 4: Support Hours -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
-                        Official Support
-                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
-                    </h4>
-                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
-                        Have questions? Chat with us directly on WhatsApp for quick assistance.
+                    <h4 class="font-heading font-bold text-md tracking-wider uppercase mb-6 text-natureGreen-accent">Working Hours</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Visit our center or contact us during these hours:
                     </p>
-                    <a href="https://wa.me/919944019149" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#25D366]/20 transition-all transform hover:-translate-y-1">
-                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><strong class="text-white">Monday - Saturday:</strong> 9:00 AM - 6:00 PM</li>
+                        <li><strong class="text-white">Sunday:</strong> Closed</li>
+                    </ul>
                 </div>
             </div>
 
@@ -587,12 +707,113 @@
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919944019149" target="_blank"
-        class="wa-float-btn fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center animate-bounce">
-        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center animate-bounce"
+        aria-label="Contact on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <!-- External Script -->
-    <script src="script.js"></script>
+    <!-- Interactive Scripts directly embedded in index.html for maximum compatibility -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup Mobile Menu behavior
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                });
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Slider Logic (Split Hero Slider)
+            const slides = document.querySelectorAll('.hero-slide');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            let currentSlide = 0;
+            let slideInterval;
+
+            if (slides.length > 0) {
+                const showSlide = (n) => {
+                    slides.forEach(slide => {
+                        slide.classList.replace('opacity-100', 'opacity-0');
+                        slide.classList.add('pointer-events-none');
+                        slide.classList.remove('pointer-events-auto');
+                    });
+                    currentSlide = (n + slides.length) % slides.length;
+                    slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+                    slides[currentSlide].classList.add('pointer-events-auto');
+                    slides[currentSlide].classList.remove('pointer-events-none');
+                };
+
+                const startAutoPlay = () => {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+                };
+
+                if (prevBtn) prevBtn.addEventListener('click', () => {
+                    showSlide(currentSlide - 1);
+                    startAutoPlay();
+                });
+
+                if (nextBtn) nextBtn.addEventListener('click', () => {
+                    showSlide(currentSlide + 1);
+                    startAutoPlay();
+                });
+
+                startAutoPlay();
+            }
+
+            // Animated Counters logic with Scroll Observer
+            const stats = document.querySelectorAll('#stat-counters [data-target]');
+            const countSpeed = 200; // lower is slower, higher is faster
+
+            const animateStats = () => {
+                stats.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = Math.max(1, Math.floor(target / countSpeed));
+
+                        if (count < target) {
+                            counter.innerText = count + inc;
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            // Observer to trigger animations when section is scrolled into view
+            const statsSection = document.getElementById('stat-counters');
+            if (statsSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateStats();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(statsSection);
+            } else {
+                animateStats(); // fallback if observer not supported
+            }
+
+            lucide.createIcons();
+        });
+    </script>
 </body>
 
 </html>
