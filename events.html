@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events & Workshops | Sreemayil Lifestyle Centre</title>
+    <meta name="description"
+        content="Join our upcoming herbal wellness workshops, soap-making training, skincare seminars, and traditional wellness camps. Secure your seat online.">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        natureGreen: {
+                            DEFAULT: '#2D5A27',
+                            light: '#4A7C44',
+                            dark: '#1E3D1A',
+                            accent: '#A3E635'
+                        },
+                        earthyCream: {
+                            DEFAULT: '#FDFAF5',
+                            dark: '#f0ede8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Outfit, Inter, Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Events Styles -->
+    <style>
+        .event-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #f1ece4;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .event-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(45, 90, 39, 0.08);
+            border-color: rgba(45, 90, 39, 0.2);
+        }
+
+        /* Slide drawer scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(45, 90, 39, 0.2);
+            border-radius: 99px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(45, 90, 39, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-earthyCream text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="w-full bg-white border-b border-gray-100 z-50 sticky top-0 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <a href="index.html" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-natureGreen hover:bg-natureGreen hover:text-white transition-all shadow-sm border border-gray-100 group" aria-label="Back to Home">
+                        <i data-lucide="chevron-left" class="w-6 h-6 transition-transform group-hover:-translate-x-0.5"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/brandlogo-text.png" alt="Logo" class="h-12 w-auto object-contain" />
+                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight hidden sm:block"></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#about" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="training.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Training
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="catalog.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Products
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="events.html" class="text-natureGreen text-[14px] font-bold relative group">
+                        Events
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
+                    </a>
+                    <!--<a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Gallery
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>-->
+
+                    <a href="index.html#contact" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-3">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-8 space-y-3">
+                <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
+                <a href="training.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Training</a>
+                <a href="catalog.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Products</a>
+                <a href="events.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Events</a>
+                <!--<a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>-->
+                <div class="pt-4">
+                    <a href="index.html#contact" class="block w-full text-center px-6 py-4 bg-natureGreen text-white font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-md">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-natureGreen-dark py-16 md:py-24 relative overflow-hidden">
+        <!-- Botanical Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+            </svg>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 animate-fade-in">
+            <span class="inline-block px-4 py-1.5 bg-natureGreen-accent text-natureGreen-dark text-[10px] font-bold tracking-widest uppercase rounded-full mb-6">Upcoming Workshops & Camps</span>
+            <h1 class="text-4xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">Empower Your Wellness Journey</h1>
+            <p class="text-lg md:text-xl text-earthyCream/80 font-light leading-relaxed max-w-2xl mx-auto">
+                Secure your seats for hands-on trainings in traditional wellness, herbal soaps formulation, skincare, and organic farming.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="py-12 md:py-20 flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Events Grid -->
+            <div id="events-grid" class="space-y-6 max-w-4xl mx-auto">
+                <!-- Dynamically populated via Javascript -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a3317] pt-16 pb-10 text-white border-t border-white/5 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand Identity -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-16 w-auto object-contain bg-white rounded-md p-0.5" />
+                        <span class="font-heading font-bold text-2xl tracking-tight">SreeMayil</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 max-w-xs">
+                        Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen transition-colors group">
+                            <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Navigation -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Home</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">About Us</a></li>
+                        <li><a href="training.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Training Workshops</a></li>
+                        <li><a href="catalog.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Product Catalog</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Events & Camps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Information -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 text-sm text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <span>SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110.</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="tel:+919944019149" class="hover:text-natureGreen transition-colors">+91 9944019149</a>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="mailto:sreemayil.santhai@gmail.com" class="hover:text-natureGreen transition-colors">sreemayil.santhai@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support Official -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Official Support
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+                        Have questions? Chat with us directly on WhatsApp for quick assistance.
+                    </p>
+                    <a href="https://wa.me/919944019149" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#25D366]/20 transition-all transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-10 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-xs tracking-widest uppercase">
+                    &copy; 2026 SreeMayil Lifestyle Centre. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919944019149" target="_blank"
+        class="wa-float-btn fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center animate-bounce" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- DETAIL MODAL OVERLAY -->
+    <div id="detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div onclick="closeDetailModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+        <!-- Modal Content Container -->
+        <div id="modal-box" class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 flex flex-col custom-scrollbar">
+            
+            <!-- Banner Image & Floating Close Button -->
+            <div class="relative h-64 md:h-80 w-full overflow-hidden shrink-0 bg-gray-100">
+                <img id="modal-image" src="" alt="Event Detail Image" class="w-full h-full object-cover">
+                <button onclick="closeDetailModal()" class="absolute top-4 right-4 bg-black/40 hover:bg-black/60 text-white rounded-full p-2.5 backdrop-blur-md transition-colors focus:outline-none z-20" aria-label="Close details">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Details Panel Content -->
+            <div class="p-6 md:p-10 space-y-8 flex-grow">
+                <!-- Main Header Block -->
+                <div>
+                    <h2 id="modal-title" class="text-2xl md:text-4xl font-heading font-bold text-gray-900 leading-tight mb-3"></h2>
+                    <p id="modal-short-desc" class="text-base text-gray-600 font-medium leading-relaxed"></p>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- Event Information Grid -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-4">Event Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Date -->
+                        <div class="bg-gray-50/50 p-4 rounded-xl border border-gray-100 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-0.5">
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Date</span>
+                                <span id="modal-date" class="text-sm font-semibold text-gray-800 leading-snug"></span>
+                            </div>
+                        </div>
+
+                        <!-- Duration -->
+                        <div class="bg-gray-50/50 p-4 rounded-xl border border-gray-100 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-0.5">
+                                <i data-lucide="timer" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Duration</span>
+                                <span id="modal-duration" class="text-sm font-semibold text-gray-800 leading-snug"></span>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="bg-gray-50/50 p-4 rounded-xl border border-gray-100 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-0.5">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Location</span>
+                                <span id="modal-location" class="text-sm font-semibold text-gray-800 leading-snug"></span>
+                            </div>
+                        </div>
+
+                        <!-- Donation -->
+                        <div class="bg-gray-50/50 p-4 rounded-xl border border-gray-100 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-0.5">
+                                <i data-lucide="indian-rupee" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Donation</span>
+                                <span id="modal-fee" class="text-sm font-bold text-natureGreen-dark font-heading leading-snug"></span>
+                            </div>
+                        </div>
+
+                        <!-- Capacity -->
+                        <div class="bg-gray-50/50 p-4 rounded-xl border border-gray-100 flex items-start gap-4 md:col-span-2">
+                            <div class="w-10 h-10 rounded-xl bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-0.5">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Capacity</span>
+                                <span id="modal-batch" class="text-sm font-semibold text-gray-800 leading-snug"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- About This Event -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">About This Workshop</h3>
+                    <p id="modal-desc" class="text-gray-600 text-sm md:text-base leading-relaxed whitespace-pre-line"></p>
+                </div>
+
+                <!-- Curriculum / Learning Points -->
+                <div id="modal-curriculum-wrapper" class="hidden">
+                    <hr class="border-gray-100 mb-8">
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-4">Curriculum & What You Will Learn</h3>
+                    <ul id="modal-curriculum" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700"></ul>
+                </div>
+
+                <!-- Trainer / Facilitator Bio -->
+                <div id="modal-trainer-wrapper" class="hidden">
+                    <hr class="border-gray-100 mb-8">
+                    <div class="bg-natureGreen/5 p-6 rounded-2xl border border-natureGreen/10 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-natureGreen text-white font-bold flex items-center justify-center text-xl shrink-0 font-heading">
+                            <i data-lucide="user-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-natureGreen uppercase tracking-wider block mb-0.5">Trainer & Facilitator</span>
+                            <h4 id="modal-trainer-name" class="font-heading font-bold text-lg text-gray-900"></h4>
+                            <p id="modal-trainer-role" class="text-xs text-gray-500 font-medium mb-2"></p>
+                            <p id="modal-trainer-exp" class="text-xs text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Action Buttons -->
+            <div class="p-6 border-t border-gray-100 bg-gray-50/80 backdrop-blur-md flex items-center justify-end gap-4 shrink-0 sticky bottom-0 z-20">
+                <button onclick="closeDetailModal()" class="px-6 py-3 text-sm font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all">
+                    Close
+                </button>
+                <button id="modal-action-btn" class="px-8 py-3 bg-natureGreen hover:bg-natureGreen-light text-white text-sm font-bold rounded-xl transition-all flex items-center gap-2 shadow-md hover:shadow-lg hover:shadow-natureGreen/20">
+                    Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIRECT EVENT REGISTRATION MODAL -->
+    <div id="registration-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div onclick="closeRegistrationModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+        
+        <!-- Registration Form Box -->
+        <div id="registration-box" class="bg-white rounded-2xl max-w-md w-full relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 flex flex-col p-6 md:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <!-- Close -->
+            <button onclick="closeRegistrationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none" aria-label="Close Registration">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-heading font-bold text-natureGreen-dark">Event Registration</h3>
+                <p class="text-sm text-gray-500 mt-1">Fill in your details below to register via WhatsApp.</p>
+            </div>
+
+            <!-- Selected Event Summary Card -->
+            <div class="bg-natureGreen/5 p-4 rounded-xl border border-natureGreen/10 mb-6">
+                <span class="block text-[10px] font-bold text-natureGreen uppercase tracking-wider mb-1">Registering For:</span>
+                <h4 id="reg-event-title" class="font-heading font-bold text-base text-gray-900 leading-snug"></h4>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs text-gray-600 font-medium">
+                    <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5 text-natureGreen"></i> <span id="reg-event-date"></span></span>
+                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-natureGreen"></i> <span id="reg-event-location" class="truncate max-w-[180px]"></span></span>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="registration-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+                <div>
+                    <label for="reg-name" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Full Name *</label>
+                    <input type="text" id="reg-name" required placeholder="Enter your full name" 
+                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label for="reg-phone" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Mobile Number *</label>
+                    <input type="tel" id="reg-phone" required placeholder="e.g. +91 9944019149" 
+                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label for="reg-email" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Email Address *</label>
+                    <input type="email" id="reg-email" required placeholder="name@example.com" 
+                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label for="reg-message" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Message *</label>
+                    <textarea id="reg-message" required rows="3" placeholder="Write your message or query..." 
+                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-colors text-sm custom-scrollbar"></textarea>
+                </div>
+
+                <!-- Action Button -->
+                <button type="submit" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl transition-all flex justify-center items-center gap-2 shadow-md mt-2">
+                    <span>Send Registration to WhatsApp</span>
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions Logic -->
+    <script>
+        // Events Data Array (Standalone JS Data Source)
+        const eventsData = [
+            {
+                "id": 1,
+                "type": "workshop",
+                "title": "Herbal Soap Making Workshop",
+                "shortDescription": "Master the traditional art of cold-process herbal soap formulation using 100% natural, chemical-free ingredients.",
+                "description": "Join our comprehensive hands-on workshop designed for beginners and wellness enthusiasts. You will learn the science and traditional techniques of formulating chemical-free herbal soaps from scratch.\n\nOur expert instructors guide you step-by-step through oil selection, lye safety calculations, cold-process saponification, and infusing therapeutic herbs like Neem, Aloe Vera, and Kuppaimeni. Every participant formulates their own custom batch to take home, along with a detailed formulation guide and starter recipe booklet.",
+                "date": "To Be Announced",
+                
+                "duration": "6 Hours",
+                "location": "SreeMayil Lifestyle Centre, Erode",
+                "fee": "₹1,500",
+                "feeValue": 1500,
+                "batchSize": "25 Seats (Limited)",
+                "image": "assets/images/gallery/soap.png",
+                "curriculum": [
+                    "Introduction to saponification science & unrefined base oils",
+                    "Essential guidelines for safe lye handling and calculations",
+                    "Methods for infusing fresh medicinal herbs (Neem, Aloe, Kuppaimeni)",
+                    "Blending therapeutic essential oils and organic colorants",
+                    "Pouring, molding, curing, and packaging your soap batches"
+                ],
+                "trainer": {
+                    "name": "Dr. S. Shanmugam",
+                    "role": "Senior Herbal Formulator & Siddha Specialist",
+                    "experience": "15+ Years of experience in traditional formulation sciences."
+                }
+            },
+            {
+                "id": 2,
+                "type": "workshop",
+                "title": "Natural Skincare & Wellness Seminar",
+                "shortDescription": "Discover organic botanical formulations to nourish, restore, and maintain healthy, glowing skin naturally.",
+                "description": "Unlock the ancient secrets of herbal skin care with our immersive wellness seminar. Learn how to transition from synthetic cosmetics to chemical-free botanical formulations tailored for your unique skin type.\n\nThis session covers formulating herbal face packs, soothing lip balms, and nutrient-dense facial serums using native herbs and unrefined botanical oils. Gain practical insights into herbal skin diagnostics and daily Ayurvedic skincare routines.",
+                "date": "July 19, 2026",
+                "time": "10:00 AM - 1:00 PM",
+                "duration": "3 Hours",
+                "location": "SreeMayil Lifestyle Centre, Erode",
+                "fee": "₹800",
+                "feeValue": 800,
+                "batchSize": "30 Seats",
+                "image": "assets/images/soap-facepack.jpg",
+                "curriculum": [
+                    "Understanding skin types and compatible botanical properties",
+                    "Step-by-step formulation of natural herbal face packs",
+                    "Creating organic lip balms using beeswax and plant oils",
+                    "Transitioning to a chemical-free daily skincare regimen"
+                ],
+                "trainer": {
+                    "name": "Mrs. Kavitha Raman",
+                    "role": "Ayurvedic Beauty & Wellness Educator",
+                    "experience": "12+ Years of teaching natural lifestyle & skincare therapies."
+                }
+            },
+            {
+                "id": 3,
+                "type": "camp",
+                "title": "Traditional Wellness & Siddha Camp",
+                "shortDescription": "A community wellness day featuring traditional pulse checking, dietary consultation, and native herbal guidance.",
+                "description": "Step into holistic living at our community Traditional Wellness Camp. Designed for families and health-conscious individuals, this special event connects you with experienced traditional Siddha practitioners for personalized wellness evaluations.\n\nParticipants undergo pulse diagnostics (Nadi Parikshai), receive custom dietary advice, and learn simple kitchen herbal remedies for common ailments. Explore native organic food stalls and refresh with traditional botanical beverages.",
+                "date": "August 2, 2026",
+                "time": "9:00 AM - 5:00 PM",
+                "duration": "8 Hours",
+                "location": "SreeMayil Lifestyle Centre, Erode",
+                "fee": "Free Registration",
+                "feeValue": 0,
+                "batchSize": "Open to All",
+                "image": "assets/images/training-classroom.jpg",
+                "curriculum": [
+                    "Personalized pulse diagnosis (Nadi Parikshai) consultations",
+                    "Siddha lifestyle analysis and custom dietary suggestions",
+                    "Understanding native herbs for common domestic health care",
+                    "Interactive public Q&A with panel traditional physicians"
+                ],
+                "trainer": {
+                    "name": "Siddha Medical Panel",
+                    "role": "SreeMayil Wellness Advisory Council",
+                    "experience": "A collective panel of expert doctors with 40+ combined years in practice."
+                }
+            }
+        ];
+
+        // DOM Elements
+        const eventsGrid = document.getElementById('events-grid');
+        const detailModal = document.getElementById('detail-modal');
+        const modalBox = document.getElementById('modal-box');
+        const registrationModal = document.getElementById('registration-modal');
+        const registrationBox = document.getElementById('registration-box');
+
+        // State variable for active booking
+        let selectedEventForRegistration = null;
+
+        // Load and render events data
+        function loadEventsData() {
+            eventsGrid.innerHTML = '';
+            renderEvents(eventsData);
+        }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            loadEventsData();
+
+            // Setup Mobile Menu behavior
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                });
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Keyboard navigation for closing modals
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeDetailModal();
+                    closeRegistrationModal();
+                }
+            });
+        });
+
+        function renderEvents(events) {
+            eventsGrid.innerHTML = '';
+            
+            if (events.length === 0) {
+                eventsGrid.innerHTML = `
+                    <div class="text-center py-12 bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+                        <i data-lucide="calendar-x" class="w-12 h-12 text-gray-300 mx-auto mb-4"></i>
+                        <p class="text-gray-500 font-medium">No events currently scheduled.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden border border-[#f1ece4] hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row p-5 md:p-6 gap-6 items-stretch animate-fade-in';
+                card.innerHTML = `
+                    <!-- Left Side: Image -->
+                    <div class="md:w-1/3 w-full h-48 md:h-auto overflow-hidden rounded-xl bg-gray-50 flex-shrink-0 cursor-pointer" onclick="openDetailModal('${event.id}')">
+                        <img src="${event.image}" alt="${event.title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    
+                    <!-- Right Side: Content -->
+                    <div class="flex-grow flex flex-col justify-between pt-2 md:pt-0">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-heading font-bold text-gray-900 mb-2 hover:text-natureGreen transition-colors cursor-pointer" onclick="openDetailModal('${event.id}')">
+                                ${event.title}
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4 leading-relaxed line-clamp-2 md:line-clamp-3">
+                                ${event.shortDescription}
+                            </p>
+                            
+                            <!-- Important Details Strip -->
+                            <div class="flex flex-wrap items-center gap-y-3 gap-x-6 text-xs text-gray-500 font-medium mb-4 pb-4 border-b border-gray-100">
+                                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 text-natureGreen"></i> ${event.date}</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="timer" class="w-4 h-4 text-natureGreen"></i> ${event.duration}</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-natureGreen"></i> ${event.location}</span>
+                                <span class="flex items-center gap-1.5 font-semibold text-natureGreen"> ${event.fee}</span>
+                                ${event.batchSize ? `<span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-natureGreen"></i> ${event.batchSize}</span>` : ''}
+                            </div>
+                        </div>
+                        
+                        <!-- Actions Row -->
+                        <div class="flex items-center justify-end gap-3 mt-4 md:mt-0">
+                            <button onclick="openDetailModal('${event.id}')" class="px-5 py-2.5 bg-gray-50 hover:bg-gray-100 text-gray-700 text-xs font-bold rounded-xl transition-all border border-gray-200">
+                                Details
+                            </button>
+                            <button onclick="openRegistrationModal('${event.id}')" class="px-6 py-2.5 bg-natureGreen hover:bg-natureGreen-light text-white text-xs font-bold rounded-xl transition-all shadow-sm">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+                eventsGrid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // Open Detail Modal
+        function openDetailModal(eventId) {
+            const event = eventsData.find(e => String(e.id) === String(eventId));
+            if (!event) return;
+
+            // Populating Modal details
+            document.getElementById('modal-image').src = event.image;
+            document.getElementById('modal-title').textContent = event.title;
+            document.getElementById('modal-short-desc').textContent = event.shortDescription || '';
+            document.getElementById('modal-date').textContent = event.date;
+            document.getElementById('modal-duration').textContent = event.duration || '';
+            document.getElementById('modal-batch').textContent = event.batchSize || '';
+            document.getElementById('modal-fee').textContent = event.fee || '';
+            document.getElementById('modal-location').textContent = event.location || '';
+            document.getElementById('modal-desc').textContent = event.description || '';
+
+            // Curriculum population
+            const currWrapper = document.getElementById('modal-curriculum-wrapper');
+            const currList = document.getElementById('modal-curriculum');
+            if (event.curriculum && event.curriculum.length > 0) {
+                currList.innerHTML = event.curriculum.map(item => `
+                    <li class="flex items-start gap-2.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-natureGreen shrink-0 mt-0.5"></i>
+                        <span>${item}</span>
+                    </li>
+                `).join('');
+                currWrapper.classList.remove('hidden');
+            } else {
+                currWrapper.classList.add('hidden');
+            }
+
+            // Trainer Bio population
+            const trainerWrapper = document.getElementById('modal-trainer-wrapper');
+            if (event.trainer) {
+                document.getElementById('modal-trainer-name').textContent = event.trainer.name || '';
+                document.getElementById('modal-trainer-role').textContent = event.trainer.role || '';
+                document.getElementById('modal-trainer-exp').textContent = event.trainer.experience || '';
+                trainerWrapper.classList.remove('hidden');
+            } else {
+                trainerWrapper.classList.add('hidden');
+            }
+
+            // Setup modal trigger button click behavior
+            const actionBtn = document.getElementById('modal-action-btn');
+            actionBtn.onclick = () => {
+                closeDetailModal();
+                setTimeout(() => openRegistrationModal(eventId), 250);
+            };
+
+            // Animation open
+            detailModal.classList.remove('hidden');
+            detailModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95', 'opacity-0');
+                modalBox.classList.add('scale-100', 'opacity-100');
+            }, 50);
+
+            lucide.createIcons();
+        }
+
+        // Close Detail Modal
+        function closeDetailModal() {
+            modalBox.classList.remove('scale-100', 'opacity-100');
+            modalBox.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                detailModal.classList.add('hidden');
+                detailModal.classList.remove('flex');
+                if (registrationModal.classList.contains('hidden')) {
+                    document.body.style.overflow = '';
+                }
+            }, 300);
+        }
+
+        // Open Direct Registration Modal
+        function openRegistrationModal(eventId) {
+            const event = eventsData.find(e => String(e.id) === String(eventId));
+            if (!event) return;
+
+            selectedEventForRegistration = event;
+
+            // Populate form summary header
+            document.getElementById('reg-event-title').textContent = event.title;
+            document.getElementById('reg-event-date').textContent = event.date;
+            document.getElementById('reg-event-location').textContent = event.location;
+
+            // Show modal
+            registrationModal.classList.remove('hidden');
+            registrationModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                registrationBox.classList.remove('scale-95', 'opacity-0');
+                registrationBox.classList.add('scale-100', 'opacity-100');
+            }, 50);
+
+            lucide.createIcons();
+        }
+
+        // Close Registration Modal
+        function closeRegistrationModal() {
+            registrationBox.classList.remove('scale-100', 'opacity-100');
+            registrationBox.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                registrationModal.classList.add('hidden');
+                registrationModal.classList.remove('flex');
+                if (detailModal.classList.contains('hidden')) {
+                    document.body.style.overflow = '';
+                }
+            }, 300);
+        }
+
+        // Handle Registration Submit and redirect to WhatsApp
+        function handleRegistrationSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('reg-name').value.trim();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const message = document.getElementById('reg-message').value.trim();
+
+            if (!name || !phone || !email || !message) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            const eventTitle = selectedEventForRegistration ? selectedEventForRegistration.title : "Event Registration";
+            const eventDate = selectedEventForRegistration ? selectedEventForRegistration.date : "";
+
+            // Construct exact WhatsApp Message Text format
+            const whatsappNumber = "919944019149";
+            const textMessage = `New Event Registration
+
+Event:
+${eventTitle}
+
+Date:
+${eventDate}
+
+Name:
+${name}
+
+Mobile:
+${phone}
+
+Email:
+${email}
+
+Message:
+${message}`;
+
+            const encodedMessage = encodeURIComponent(textMessage);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Reset form
+            document.getElementById('registration-form').reset();
+
+            // Close modal
+            closeRegistrationModal();
+
+            // Open WhatsApp link in new tab
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+
+</html>
