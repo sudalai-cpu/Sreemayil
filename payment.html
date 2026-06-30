@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment | SreeMayil Lifestyle Centre</title>
+    <meta name="description"
+        content="Secure bank transfer and UPI payment instructions for SreeMayil Lifestyle Centre products and workshops.">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        natureGreen: {
+                            DEFAULT: '#2D5A27',
+                            light: '#4A7C44',
+                            dark: '#1E3D1A',
+                            accent: '#A3E635'
+                        },
+                        earthyCream: {
+                            DEFAULT: '#FDFAF5',
+                            dark: '#f0ede8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Outfit, Inter, Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FontAwesome CDN for Brand Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-earthyCream text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar (matching index.html) -->
+    <div class="bg-natureGreen text-white text-[12px] md:text-xs font-semibold py-2.5 px-4 text-center tracking-wider uppercase border-b border-white/10 shrink-0">
+        <span>🌿 Reviving Traditional Wellness & Holistic Living</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="w-full bg-white border-b border-gray-100 z-50 sticky top-0 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/brandlogo-text.png" alt="Logo" class="h-12 w-auto object-contain" />
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="events.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Event
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Gallery
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="catalog.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Product
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="payment.html" class="text-natureGreen text-[14px] font-bold relative group">
+                        Payment
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors" aria-label="Open Menu">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-8 space-y-3">
+                <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Home</a>
+                <a href="about.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
+                <a href="events.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Event</a>
+                <a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>
+                <a href="catalog.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Product</a>
+                <a href="payment.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Payment</a>
+                <a href="contact.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-12 bg-white border-b border-gray-50 shadow-sm shrink-0">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-xs font-bold text-natureGreen uppercase tracking-widest mb-2 block">Checkout Portal</span>
+            <h1 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">Payment Instructions</h1>
+            <p class="text-sm text-gray-500 mt-2 max-w-md mx-auto">Please complete your payment via Direct Bank Transfer or UPI QR scan below, then share details on WhatsApp.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Split Dashboard Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
+            
+            <!-- Left Column: Bank Transfer Details Card -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-50 pb-4">
+                        <div class="w-12 h-12 bg-natureGreen/5 rounded-2xl flex items-center justify-center text-natureGreen">
+                            <i data-lucide="landmark" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-heading font-bold text-gray-900">Direct Bank Transfer</h2>
+                            <p class="text-xs text-gray-500">Transfer funds manually using net banking or mobile apps.</p>
+                        </div>
+                    </div>
+
+                    <!-- Details Table -->
+                    <div class="space-y-4">
+                        <!-- Account Name -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-3 border-b border-gray-50">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Account Name</span>
+                            <span class="text-sm font-semibold text-gray-900 sm:text-right">MAYILSAMY T</span>
+                        </div>
+
+                        <!-- Account Number -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-3 border-b border-gray-50">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Account Number</span>
+                            <div class="flex items-center gap-3 justify-between sm:justify-end">
+                                <span class="text-sm font-bold text-natureGreen font-mono tracking-wider">058705004342</span>
+                                <button id="btn-copy-acc" onclick="copyValue('058705004342', 'btn-copy-acc')" class="flex items-center gap-1.5 px-2.5 py-1 text-xs border border-gray-200 rounded-lg text-gray-600 hover:bg-natureGreen/5 hover:text-natureGreen hover:border-natureGreen/30 transition-all font-medium" aria-label="Copy account number">
+                                    <i class="far fa-copy text-[11px]"></i>
+                                    <span class="copy-text">Copy</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bank & Branch -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-3 border-b border-gray-50">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Bank & Branch</span>
+                            <span class="text-sm font-semibold text-gray-900 sm:text-right">ICICI Bank, Coimbatore - Avinashi Road</span>
+                        </div>
+
+                        <!-- IFSC Code -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-3 border-b border-gray-50">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">IFSC Code</span>
+                            <div class="flex items-center gap-3 justify-between sm:justify-end">
+                                <span class="text-sm font-bold text-natureGreen font-mono tracking-wider">ICIC0000587</span>
+                                <button id="btn-copy-ifsc" onclick="copyValue('ICIC0000587', 'btn-copy-ifsc')" class="flex items-center gap-1.5 px-2.5 py-1 text-xs border border-gray-200 rounded-lg text-gray-600 hover:bg-natureGreen/5 hover:text-natureGreen hover:border-natureGreen/30 transition-all font-medium" aria-label="Copy IFSC code">
+                                    <i class="far fa-copy text-[11px]"></i>
+                                    <span class="copy-text">Copy</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Account Type -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-3 border-b border-gray-50">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Account Type</span>
+                            <span class="text-sm font-semibold text-gray-900 sm:text-right">Overdraft AC (INR)</span>
+                        </div>
+
+                        <!-- Bank Address -->
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 py-3">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider sm:pt-0.5">Bank Address</span>
+                            <span class="text-xs font-medium text-gray-600 sm:text-right max-w-[280px]">480A, Avinashi Road, Coimbatore, TN, IN, 641004</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Help Note -->
+                <div class="mt-8 p-4 bg-gray-50/50 border border-gray-100 rounded-2xl flex gap-3 items-start">
+                    <i data-lucide="info" class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"></i>
+                    <p class="text-xs text-gray-500 leading-relaxed">Ensure you input the exact IFSC and Account Number when making IMPS/NEFT transfers to avoid transaction delays.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Instant UPI QR Scanner Card -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300 text-center">
+                <div>
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-50 pb-4 text-left">
+                        <div class="w-12 h-12 bg-natureGreen/5 rounded-2xl flex items-center justify-center text-natureGreen">
+                            <i data-lucide="qr-code" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-heading font-bold text-gray-900">Instant UPI Payment</h2>
+                            <p class="text-xs text-gray-500">Scan and pay instantly using any UPI payment app.</p>
+                        </div>
+                    </div>
+
+                    <!-- QR Frame Container -->
+                    <div class="relative max-w-[260px] mx-auto p-4 bg-gray-50 rounded-3xl border border-gray-100/80 mb-6 group flex flex-col items-center">
+                        <!-- UPI QR Code Wrapper -->
+                        <div class="relative w-full aspect-square rounded-2xl bg-white border border-gray-200/50 shadow-inner overflow-hidden flex items-center justify-center">
+                            <!-- Sudar: Replace this src with your official UPI QR Code image path later -->
+                            <img src="assets/images/Scaner.jpeg" alt="UPI QR Code Placeholder" class="w-11/12 h-11/12 object-contain" />
+                        </div>
+                    </div>
+
+                    <!-- Scan Notice -->
+                    <p class="text-sm font-bold text-natureGreen mb-2">Scan via GPay, PhonePe, or Paytm to pay instantly.</p>
+                    <p class="text-xs text-gray-400 max-w-xs mx-auto">Supports all BHIM UPI compatible banking apps.</p>
+                </div>
+
+                <!-- UPI Apps Badges -->
+                <div class="mt-8 flex justify-center items-center gap-6 opacity-60">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Pay_Logo.svg" alt="Google Pay" class="h-5 w-auto object-contain" onerror="this.style.display='none'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo.png" alt="UPI" class="h-6 w-auto object-contain" onerror="this.style.display='none'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" class="h-4 w-auto object-contain" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Notice Block -->
+        <div class="bg-natureGreen/5 border border-natureGreen/15 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex gap-4 items-start text-left">
+                <div class="w-10 h-10 rounded-full bg-natureGreen/10 flex items-center justify-center text-natureGreen shrink-0 mt-1">
+                    <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-1">Important Confirmation Step</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-3xl">
+                        Important: Once you have completed your bank transfer or QR payment, please share the payment screenshot along with your order details to our official WhatsApp support for instant confirmation.
+                    </p>
+                </div>
+            </div>
+            <a href="https://wa.me/919944019149" target="_blank" class="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-2xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Share Screenshot on WhatsApp</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Comprehensive Footer -->
+    <footer class="bg-[#1a3317] pt-16 pb-8 text-white border-t border-white/5 shrink-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Column 1: Brand Identity -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-14 w-auto object-contain bg-white rounded-md p-0.5" />
+                        <span class="font-heading font-bold text-xl tracking-tight">SreeMayil</span>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-6 max-w-xs">
+                        Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-sm group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Instagram">
+                            <i class="fab fa-instagram text-sm group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Youtube">
+                            <i class="fab fa-youtube text-sm group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://wa.me/919944019149" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp text-sm group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-xs tracking-wider uppercase mb-5 text-natureGreen-accent">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-xs font-medium">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-natureGreen transition-colors text-xs font-medium">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-natureGreen transition-colors text-xs font-medium">Gallery</a></li>
+                        <li><a href="catalog.html" class="text-gray-300 hover:text-natureGreen transition-colors text-xs font-medium">Product Catalog</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-natureGreen transition-colors text-xs font-medium">Events & Camps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-xs tracking-wider uppercase mb-5 text-natureGreen-accent">Get in Touch</h4>
+                    <ul class="space-y-4 text-xs text-gray-300">
+                        <li class="flex items-start gap-3 justify-center md:justify-start">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-natureGreen-accent shrink-0 mt-0.5"></i>
+                            <span>SreeMayil Lifestyle Centre,<br>Thoranavavi, Erode - 638110.</span>
+                        </li>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i data-lucide="phone" class="w-4 h-4 text-natureGreen-accent shrink-0"></i>
+                            <span>+91 99440 19149</span>
+                        </li>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i data-lucide="mail" class="w-4 h-4 text-natureGreen-accent shrink-0"></i>
+                            <span>sreemayil.santhai@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Working Hours -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-xs tracking-wider uppercase mb-5 text-natureGreen-accent">Working Hours</h4>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                        Visit our center or contact us during these hours:
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li><strong class="text-white">Monday - Saturday:</strong> 9:00 AM - 6:00 PM</li>
+                        <li><strong class="text-white">Sunday:</strong> Closed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-[10px] tracking-widest uppercase">
+                    &copy; 2026 SreeMayil Lifestyle Centre. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Copy to clipboard with success feedback UI states
+        function copyValue(text, btnId) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById(btnId);
+                const copyText = btn.querySelector('.copy-text');
+                const copyIcon = btn.querySelector('i');
+                
+                // Success state
+                if (copyText) copyText.textContent = 'Copied!';
+                if (copyIcon) {
+                    copyIcon.className = 'fas fa-check text-green-500';
+                }
+                btn.classList.add('bg-green-50', 'text-green-600', 'border-green-300');
+                
+                // Revert state
+                setTimeout(() => {
+                    if (copyText) copyText.textContent = 'Copy';
+                    if (copyIcon) {
+                        copyIcon.className = 'far fa-copy';
+                    }
+                    btn.classList.remove('bg-green-50', 'text-green-600', 'border-green-300');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>

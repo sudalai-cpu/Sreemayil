@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | SreeMayil Lifestyle Centre</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        natureGreen: {
+                            DEFAULT: '#2D5A27',
+                            light: '#4A7C44',
+                            dark: '#1E3D1A',
+                            accent: '#A3E635'
+                        },
+                        earthyCream: {
+                            DEFAULT: '#FDFAF5',
+                            dark: '#f0ede8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FontAwesome CDN for Brand Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-earthyCream text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="w-full bg-white border-b border-gray-100 z-50 sticky top-0 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <!-- Mobile Back Button -->
+                    <a href="index.html" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-natureGreen hover:bg-natureGreen hover:text-white transition-all shadow-sm border border-gray-100 group" aria-label="Back to Home">
+                        <i data-lucide="chevron-left" class="w-6 h-6 transition-transform group-hover:-translate-x-0.5"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/brandlogo-text.png" alt="Logo" class="h-12 w-auto object-contain" />
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="events.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Event
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Gallery
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="products.html" class="text-natureGreen text-[14px] font-bold relative group">
+                        Product
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
+                    </a>
+                    <a href="payment.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Payment
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-natureGreen focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 py-6 space-y-3">
+                <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Home</a>
+                <a href="about.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
+                <a href="events.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Event</a>
+                <a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>
+                <a href="products.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Product</a>
+                <a href="payment.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Payment</a>
+                <a href="contact.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Boutique Header -->
+    <header class="py-12 bg-white border-b border-gray-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">Handcrafted Natural Wellness Products</h1>
+            <p class="text-sm text-natureGreen font-semibold mt-2 uppercase tracking-widest">Premium Botanical Collection</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="py-12 px-4 max-w-7xl mx-auto flex-grow w-full">
+        <!-- Responsive E-Commerce Grid -->
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <!-- Django Dynamic Context Loop -->
+            {% for product in products %}
+            <div class="product-card bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col p-5 group" data-id="{{ product.id }}">
+                <!-- Image Container with category badge -->
+                <div class="relative w-full h-52 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                    <span class="absolute top-3 left-3 bg-natureGreen/15 text-natureGreen text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">
+                        {{ product.category }}
+                    </span>
+                    <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <!-- Card Body -->
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-gray-900 font-heading font-bold text-lg mb-1 leading-tight">{{ product.name }}</h3>
+                    <p class="text-gray-500 text-sm mb-4 line-clamp-2">{{ product.description }}</p>
+                    
+                    <!-- Bottom Pricing and CTA -->
+                    <div class="mt-auto flex items-end justify-between pt-2">
+                        <div class="flex flex-col">
+                            <span class="text-gray-400 text-xs line-through">₹{{ product.original_price }}</span>
+                            <span class="text-natureGreen font-bold text-2xl">₹{{ product.price }}</span>
+                        </div>
+                        <button class="add-to-cart-btn bg-natureGreen hover:bg-natureGreen-light text-white font-semibold text-sm px-4 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow-natureGreen/20 active:scale-95"
+                                data-id="{{ product.id }}"
+                                data-name="{{ product.name }}"
+                                data-price="{{ product.price }}"
+                                data-image="{{ product.image }}"
+                                data-category="{{ product.category }}">
+                            <i class="fas fa-shopping-cart text-xs"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- End Django Dynamic Context Loop -->
+
+        </div>
+    </main>
+
+    <!-- Floating Mini-Cart Button -->
+    <div id="mini-cart-button" class="fixed bottom-6 right-6 z-50 transition-transform duration-300 hover:scale-110 active:scale-95">
+        <button onclick="toggleCartModal()" class="relative bg-natureGreen hover:bg-natureGreen-light text-white p-4 rounded-full shadow-2xl flex items-center justify-center group focus:outline-none border-2 border-white w-14 h-14">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span id="cart-counter" class="absolute -top-2 -right-2 bg-[#E11D48] text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow-md transition-all duration-300 scale-0">0</span>
+        </button>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300" onclick="closeCartModalOnOutsideClick(event)">
+        <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 flex flex-col max-h-[85vh]" id="cart-modal-content">
+            <!-- Modal Header -->
+            <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-white sticky top-0 z-10">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-shopping-cart text-natureGreen text-xl"></i>
+                    <h2 class="text-xl font-heading font-bold text-gray-900">Your Shopping Cart</h2>
+                </div>
+                <button onclick="toggleCartModal()" class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="flex-grow overflow-y-auto p-6" id="cart-items-container">
+                <!-- Cart items are injected here dynamically -->
+            </div>
+
+            <!-- Modal Footer (Sticky at bottom) -->
+            <div class="px-6 py-6 border-t border-gray-100 bg-gray-50 sticky bottom-0 z-10" id="cart-footer">
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between items-center text-gray-600 text-sm">
+                        <span>Items Subtotal:</span>
+                        <span id="cart-subtotal" class="font-semibold text-gray-800">₹0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-gray-600 text-sm">
+                        <span>Delivery Charges:</span>
+                        <span class="text-natureGreen font-semibold">FREE Delivery</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-lg font-bold text-gray-900">Total Amount:</span>
+                        <span id="cart-total" class="text-2xl font-bold text-natureGreen">₹0</span>
+                    </div>
+                    <button onclick="checkoutViaWhatsApp()" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-lg rounded-2xl shadow-lg shadow-[#25D366]/20 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span>Place Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comprehensive Footer -->
+    <footer class="bg-[#1a3317] pt-20 pb-10 text-white border-t border-white/5 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand Identity -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.jpeg" alt="Logo" class="h-16 w-auto object-contain bg-white rounded-md p-0.5" />
+                        <span class="font-heading font-bold text-2xl tracking-tight">SreeMayil</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 max-w-xs">
+                        Reviving traditional herbal knowledge and promoting holistic wellness through natural products and training.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="Youtube">
+                            <i class="fab fa-youtube text-lg group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="https://wa.me/919944019149" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-natureGreen hover:text-white transition-all text-white group" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp text-lg group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Navigation -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Gallery</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Product Catalog</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-natureGreen transition-colors text-sm font-medium">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Information -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 text-sm text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <span>SreeMayil Lifestyle Centre, Thoranavavi, Erode - 638110.</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="tel:+919944019149" class="hover:text-natureGreen transition-colors">+91 9944019149</a>
+                        </li>
+                        <li class="flex items-center gap-4 text-sm text-gray-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-natureGreen shrink-0"></i>
+                            <a href="mailto:sreemayil.santhai@gmail.com" class="hover:text-natureGreen transition-colors">sreemayil.santhai@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: WhatsApp CTA -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-8 relative inline-block">
+                        Official Support
+                        <span class="absolute -bottom-2 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-8 h-1 bg-natureGreen rounded-full"></span>
+                    </h4>
+                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+                        Have questions? Chat with us directly on WhatsApp for quick assistance.
+                    </p>
+                    <a href="https://wa.me/919944019149" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#25D366]/20 transition-all transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-10 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-xs tracking-widest uppercase">
+                    &copy; 2026 SreeMayil Lifestyle Centre. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <!-- Cart and Dynamic Rendering Logic -->
+    <script>
+        // Static Product Catalog Fallback Data
+        const staticProducts = [
+            {
+                id: 1,
+                name: "Herbal Hair Oil",
+                category: "Hair Care",
+                price: 299,
+                originalPrice: 349,
+                image: "assets/images/Herbal-hair-oil_Image (2).png",
+                description: "Enriched with 18 vital herbs to promote hair growth, reduce hair fall, and prevent premature greying."
+            },
+            {
+                id: 2,
+                name: "Herbal Tooth Powder",
+                category: "Dental Care",
+                price: 99,
+                originalPrice: 120,
+                image: "assets/images/Herbal-Tooyh-powder_Image.png",
+                description: "100% natural formula with neem, clove, and babool for sparkling white teeth and healthy gums."
+            },
+            {
+                id: 3,
+                name: "Charcoal Soap",
+                category: "Soap",
+                price: 149,
+                originalPrice: 180,
+                image: "assets/images/Charcoal-Soap_Image.png",
+                description: "Activated charcoal draws out toxins, dirt, and excess oil for clear, refreshed skin."
+            },
+            {
+                id: 4,
+                name: "Coconut Oil Soap",
+                category: "Soap",
+                price: 129,
+                originalPrice: 150,
+                image: "assets/images/Coconut-oil_image.png",
+                description: "Handcrafted pure coconut oil soap that deep cleanses while retaining natural skin moisture."
+            },
+            {
+                id: 5,
+                name: "Pappaya Soap",
+                category: "Soap",
+                price: 139,
+                originalPrice: 160,
+                image: "assets/images/Pappaya-soup_image.png",
+                description: "Infused with organic papaya extract to naturally brighten skin and fade dark spots."
+            },
+            {
+                id: 6,
+                name: "Neem & Aloe Vera Soap",
+                category: "Soap",
+                price: 139,
+                originalPrice: 160,
+                image: "assets/images/Neam-Alovera-soup_image.png",
+                description: "Combines neem's antibacterial properties with aloe vera's soothing touch for healthy skin."
+            },
+            {
+                id: 7,
+                name: "Kuppaimeni Soap",
+                category: "Soap",
+                price: 129,
+                originalPrice: 150,
+                image: "assets/images/Kuppaimeni-soup_image.png",
+                description: "Traditional herbal soap effective against skin allergies, itching, and minor infections."
+            },
+            {
+                id: 8,
+                name: "Besan Soap",
+                category: "Soap",
+                price: 129,
+                originalPrice: 150,
+                image: "assets/images/Besan-Soup_Image.png",
+                description: "Gentle gram flour soap that exfoliates dead skin cells, yielding a clean and radiant face glow."
+            },
+            {
+                id: 9,
+                name: "Beetroot Malt",
+                category: "Health Drink",
+                price: 349,
+                originalPrice: 399,
+                image: "assets/images/Beetrootmalt-image.jpeg",
+                description: "A delicious, nutrient-dense health drink to naturally boost hemoglobin levels and vitality."
+            }
+        ];
+
+        // Cart state
+        let cart = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("product-container");
+            
+            // Detect if Django template tags are unrendered (which means we are running in static preview)
+            const isStatic = container.innerHTML.includes('{%') || container.innerHTML.includes('{{');
+            
+            if (isStatic) {
+                // Clear out unrendered django templating texts and build from static array
+                renderStaticProducts();
+            } else {
+                // Attach click listeners to server-rendered cards
+                bindCartEventListeners();
+            }
+            
+            // Initialize cart from localStorage
+            loadCart();
+            updateCartUI();
+
+            // Re-run lucide icons helper
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+
+        // Dynamic Renderer for Static Preview
+        function renderStaticProducts() {
+            const container = document.getElementById("product-container");
+            container.innerHTML = staticProducts.map(product => `
+                <div class="product-card bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col p-5 group" data-id="${product.id}">
+                    <div class="relative w-full h-52 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <span class="absolute top-3 left-3 bg-natureGreen/15 text-natureGreen text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">
+                            ${product.category}
+                        </span>
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="text-gray-900 font-heading font-bold text-lg mb-1 leading-tight">${product.name}</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">${product.description}</p>
+                        
+                        <div class="mt-auto flex items-end justify-between pt-2">
+                            <div class="flex flex-col">
+                                <span class="text-gray-400 text-xs line-through">₹${product.originalPrice}</span>
+                                <span class="text-natureGreen font-bold text-2xl">₹${product.price}</span>
+                            </div>
+                            <button class="add-to-cart-btn bg-natureGreen hover:bg-natureGreen-light text-white font-semibold text-sm px-4 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow-natureGreen/20 active:scale-95"
+                                    data-id="${product.id}"
+                                    data-name="${product.name}"
+                                    data-price="${product.price}"
+                                    data-image="${product.image}"
+                                    data-category="${product.category}">
+                                <i class="fas fa-shopping-cart text-xs"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            bindCartEventListeners();
+        }
+
+        // Add to Cart
+        function addToCart(id, name, price, image, category) {
+            price = parseFloat(price);
+            
+            const existingItem = cart.find(item => item.id == id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    image: image,
+                    category: category,
+                    quantity: 1
+                });
+            }
+            
+            saveCart();
+            updateCartUI();
+            
+            // Bounce/Pulse Mini Cart Button
+            const miniBtn = document.getElementById("mini-cart-button");
+            miniBtn.classList.add("scale-125");
+            setTimeout(() => miniBtn.classList.remove("scale-125"), 200);
+        }
+
+        // Change Item Quantity inside Modal
+        function changeQuantity(id, delta) {
+            const item = cart.find(item => item.id == id);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    saveCart();
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Remove Item
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id != id);
+            saveCart();
+            updateCartUI();
+        }
+
+        // Local Storage Utilities
+        function loadCart() {
+            const savedCart = localStorage.getItem('sreemayil_cart');
+            if (savedCart) {
+                try {
+                    cart = JSON.parse(savedCart);
+                } catch (e) {
+                    cart = [];
+                }
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem('sreemayil_cart', JSON.stringify(cart));
+        }
+
+        // UI Updater
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const counterBadge = document.getElementById("cart-counter");
+            
+            if (totalCount > 0) {
+                counterBadge.textContent = totalCount;
+                counterBadge.classList.remove("scale-0");
+                counterBadge.classList.add("scale-100");
+            } else {
+                counterBadge.classList.remove("scale-100");
+                counterBadge.classList.add("scale-0");
+            }
+
+            const itemsContainer = document.getElementById("cart-items-container");
+            const footerElement = document.getElementById("cart-footer");
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-16 text-center">
+                        <div class="w-20 h-20 bg-natureGreen/5 rounded-full flex items-center justify-center mb-5 text-natureGreen">
+                            <i class="fas fa-shopping-basket text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-gray-800 mb-1">Your cart is empty</h3>
+                        <p class="text-gray-500 max-w-xs text-xs leading-relaxed">Your cart is empty. Explore our natural herbal products!</p>
+                        <button onclick="toggleCartModal()" class="mt-6 px-6 py-2.5 bg-natureGreen hover:bg-natureGreen-light text-white font-semibold rounded-xl text-xs transition-colors">
+                            Continue Browsing
+                        </button>
+                    </div>
+                `;
+                if (footerElement) {
+                    footerElement.classList.add("opacity-50", "pointer-events-none");
+                }
+                document.getElementById("cart-subtotal").textContent = "₹0";
+                document.getElementById("cart-total").textContent = "₹0";
+            } else {
+                if (footerElement) {
+                    footerElement.classList.remove("opacity-50", "pointer-events-none");
+                }
+
+                let html = '<div class="space-y-4 divide-y divide-gray-100">';
+                let grandTotal = 0;
+
+                cart.forEach((item, index) => {
+                    const rowTotal = item.price * item.quantity;
+                    grandTotal += rowTotal;
+
+                    // Add padding-top to all items except the first
+                    const ptClass = index > 0 ? 'pt-4' : '';
+
+                    html += `
+                        <div class="flex items-center gap-4 ${ptClass}">
+                            <!-- Product Image -->
+                            <div class="w-16 h-16 bg-gray-50 border border-gray-100 rounded-xl overflow-hidden shrink-0 flex items-center justify-center">
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-contain p-1">
+                            </div>
+                            <!-- Details -->
+                            <div class="flex-grow min-w-0">
+                                <span class="text-[10px] bg-natureGreen/10 text-natureGreen font-bold px-2 py-0.5 rounded-full uppercase tracking-wider inline-block mb-1">${item.category}</span>
+                                <h4 class="text-gray-900 font-heading font-bold text-sm leading-tight truncate">${item.name}</h4>
+                                <div class="text-xs text-gray-500 mt-0.5">₹${item.price} each</div>
+                            </div>
+                            <!-- Quantity & Pricing -->
+                            <div class="flex flex-col items-end gap-2 shrink-0">
+                                <span class="text-sm font-bold text-gray-900">₹${rowTotal}</span>
+                                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden h-7">
+                                    <button onclick="changeQuantity(${item.id}, -1)" class="w-7 h-full bg-gray-50 hover:bg-gray-100 text-gray-600 transition-colors flex items-center justify-center font-bold text-xs focus:outline-none">-</button>
+                                    <span class="w-7 text-center text-xs font-semibold text-gray-800">${item.quantity}</span>
+                                    <button onclick="changeQuantity(${item.id}, 1)" class="w-7 h-full bg-gray-50 hover:bg-gray-100 text-gray-600 transition-colors flex items-center justify-center font-bold text-xs focus:outline-none">+</button>
+                                </div>
+                            </div>
+                            <!-- Trash -->
+                            <button onclick="removeFromCart(${item.id})" class="text-gray-300 hover:text-red-500 p-2 transition-colors focus:outline-none shrink-0" title="Remove Item">
+                                <i class="fas fa-trash-alt text-sm"></i>
+                            </button>
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+                itemsContainer.innerHTML = html;
+
+                document.getElementById("cart-subtotal").textContent = `₹${grandTotal}`;
+                document.getElementById("cart-total").textContent = `₹${grandTotal}`;
+            }
+        }
+
+        // Modal Controls
+        function toggleCartModal() {
+            const modal = document.getElementById("cart-modal");
+            const modalContent = document.getElementById("cart-modal-content");
+            
+            if (modal.classList.contains("hidden")) {
+                modal.classList.remove("hidden");
+                // Trigger layout reflow for animation transition
+                void modal.offsetWidth;
+                modal.classList.remove("opacity-0");
+                modalContent.classList.remove("scale-95", "opacity-0");
+                document.body.classList.add("overflow-hidden");
+            } else {
+                modal.classList.add("opacity-0");
+                modalContent.classList.add("scale-95", "opacity-0");
+                document.body.classList.remove("overflow-hidden");
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                }, 300);
+            }
+        }
+
+        function closeCartModalOnOutsideClick(event) {
+            if (event.target === document.getElementById("cart-modal")) {
+                toggleCartModal();
+            }
+        }
+
+        // WhatsApp Checkout Link Generation
+        // Targeted number: 919944019149
+        function checkoutViaWhatsApp() {
+            if (cart.length === 0) return;
+            
+            let message = "🌿 *SreeMayil Lifestyle Centre - New Order* 🌿\n";
+            message += "---------------------------------------------\n\n";
+            message += "*Order Details:*\n";
+            
+            let total = 0;
+            cart.forEach((item) => {
+                const rowTotal = item.price * item.quantity;
+                total += rowTotal;
+                message += `• *${item.name}* [${item.category}]\n`;
+                message += `  Qty: ${item.quantity} x ₹${item.price} = *₹${rowTotal}*\n`;
+            });
+            
+            message += "\n---------------------------------------------\n";
+            message += `*Total Bill Amount:* *₹${total}*\n`;
+            message += "Delivery: *FREE Delivery*\n";
+            message += "---------------------------------------------\n\n";
+            message += "Please confirm my order and let me know payment details. Thank you! 💚";
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/919944019149?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add Cart Event Listeners to Buttons
+        function bindCartEventListeners() {
+            document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+                // Ensure no double-binding
+                const clone = btn.cloneNode(true);
+                btn.parentNode.replaceChild(clone, btn);
+                
+                clone.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const id = clone.getAttribute("data-id");
+                    const name = clone.getAttribute("data-name");
+                    const price = clone.getAttribute("data-price");
+                    const image = clone.getAttribute("data-image");
+                    const category = clone.getAttribute("data-category");
+                    addToCart(id, name, price, image, category);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

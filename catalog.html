@@ -125,7 +125,7 @@
 <body class="bg-earthyCream text-gray-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="w-full bg-white border-b border-gray-100 z-50" id="navbar">
+    <nav class="w-full bg-white border-b border-gray-100 z-50 sticky top-0 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center gap-4">
@@ -136,7 +136,6 @@
 
                     <a href="index.html" class="flex items-center gap-3">
                         <img src="assets/images/brandlogo-text.png" alt="Logo" class="h-12 w-auto object-contain" />
-                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight hidden sm:block"></span>
                     </a>
                 </div>
                 
@@ -150,23 +149,26 @@
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
+                    <a href="events.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Event
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
+                    </a>
                     <a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
                         Gallery
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
                     <a href="catalog.html" class="text-natureGreen text-[14px] font-bold relative group">
-                        Products
+                        Product
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-natureGreen transition-all"></span>
                     </a>
-                    <a href="events.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
-                        Events
+                    <a href="payment.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Payment
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
                     </a>
-                    <!-- <a href="gallery.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
-                        Gallery
+                    <a href="contact.html" class="text-gray-600 text-[14px] font-medium hover:text-natureGreen transition-colors relative group">
+                        Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-natureGreen transition-all group-hover:w-full"></span>
-                    </a>-->
-                    <a href="contact.html" class="px-5 py-2 bg-natureGreen text-white text-sm font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-sm">Contact</a>
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -183,15 +185,11 @@
             <div class="px-4 py-6 space-y-3">
                 <a href="index.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Home</a>
                 <a href="about.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">About</a>
+                <a href="events.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Event</a>
                 <a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>
-                <a href="catalog.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Products</a>
-                <a href="events.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Events</a>
-            <!--<a href="gallery.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Gallery</a>-->
-                <div class="pt-4">
-                    <a href="contact.html" class="block w-full text-center px-6 py-4 bg-natureGreen text-white font-bold rounded-full hover:bg-natureGreen-light transition-all shadow-md">
-                        Contact Us
-                    </a>
-                </div>
+                <a href="catalog.html" class="block px-4 py-3 text-natureGreen font-bold rounded-xl bg-natureGreen/5 transition-all">Product</a>
+                <a href="payment.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Payment</a>
+                <a href="contact.html" class="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:text-natureGreen transition-all">Contact</a>
             </div>
         </div>
     </nav>
@@ -209,102 +207,146 @@
         <div class="product-grid lg:grid lg:grid-cols-3 lg:gap-8 lg:justify-items-center">
 
             <!-- 3.Herbal hair oil -->
-
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Rose">
+                    <img src="assets/images/Herbal-hair-oil_Image (2).png" alt="Herbal Hair Oil">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
-                    <h4 class="product-title font-bold text-gray-900 truncate">Herbal Hair Oil </h4>
+                    <h4 class="product-title font-bold text-gray-900 truncate">Herbal Hair Oil</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Long Hair</p>
-                    <a href="https://wa.me/919944019149?text=Order Rose Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹299</span>
+                        <span class="text-xs text-gray-400 font-medium">100ml</span>
+                    </div>
+                    <button data-name="Herbal Hair Oil" data-price="299" data-image="assets/images/Herbal-hair-oil_Image (2).png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!-- 6. Aloe Vera -->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Herbal-Tooyh-powder_Image.png" alt="Aloe Vera">
+                    <img src="assets/images/Herbal-Tooyh-powder_Image.png" alt="Herbal Tooth Powder">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
                     <h4 class="product-title font-bold text-gray-900 truncate">Herbal Tooth Powder</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Bright Teeth</p>
-                    <a href="https://wa.me/919944019149?text=Order Aloe Vera Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹150</span>
+                        <span class="text-xs text-gray-400 font-medium">50g</span>
+                    </div>
+                    <button data-name="Herbal Tooth Powder" data-price="150" data-image="assets/images/Herbal-Tooyh-powder_Image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!-- 1. Charcoal -->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Charcoal-Soap_Image.png" alt="Charcoal">
+                    <img src="assets/images/Charcoal-Soap_Image.png" alt="Charcoal Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
                     <h4 class="product-title font-bold text-gray-900 truncate">Charcoal Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Detox & Cleanse</p>
-                    <a href="https://wa.me/919944019149?text=Order Charcoal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Charcoal Soap" data-price="199" data-image="assets/images/Charcoal-Soap_Image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!-- 2. Manjistha -->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Coconut-oil_image.png" alt="Manjistha">
+                    <img src="assets/images/Coconut-oil_image.png" alt="Coconut Oil Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
                     <h4 class="product-title font-bold text-gray-900 truncate">Coconut Oil Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Skin Radiance</p>
-                    <a href="https://wa.me/919944019149?text=Order Manjistha Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Coconut Oil Soap" data-price="199" data-image="assets/images/Coconut-oil_image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
-
-            
-            
 
             <!-- 4. Sandal -->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Pappaya-soup_image.png" alt="Sandal">
+                    <img src="assets/images/Pappaya-soup_image.png" alt="Pappaya Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
-                    <h4 class="product-title font-bold text-gray-900 truncate">Pappaya Soap </h4>
+                    <h4 class="product-title font-bold text-gray-900 truncate">Pappaya Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Traditional Glow</p>
-                    <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Pappaya Soap" data-price="199" data-image="assets/images/Pappaya-soup_image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!-- 5. Neem -->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Neam-Alovera-soup_image.png" alt="Neem">
+                    <img src="assets/images/Neam-Alovera-soup_image.png" alt="Neem & Aloe Vera Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
                     <h4 class="product-title font-bold text-gray-900 truncate">Neem & Aloe Vera Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Skin Protection</p>
-                    <a href="https://wa.me/919944019149?text=Order Neem Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Neem & Aloe Vera Soap" data-price="199" data-image="assets/images/Neam-Alovera-soup_image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!--7. Kuppaimeni Soap-->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Kuppaimeni-soup_image.png" alt="Sandal">
+                    <img src="assets/images/Kuppaimeni-soup_image.png" alt="Kuppaimeni Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
                     <h4 class="product-title font-bold text-gray-900 truncate">Kuppaimeni Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Skin Protection</p>
-                    <a href="https://wa.me/919944019149?text=Order Kuppaimeni" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Kuppaimeni Soap" data-price="199" data-image="assets/images/Kuppaimeni-soup_image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!--8. Besan Soap-->
             <div class="product-card flex flex-col">
                 <div class="product-image-container">
-                    <img src="assets/images/Besan-Soup_Image.png" alt="Sandal">
+                    <img src="assets/images/Besan-Soup_Image.png" alt="Besan Soap">
                 </div>
                 <div class="text-center md:text-left flex flex-col flex-grow">
-                    <h4 class="product-title font-bold text-gray-900 truncate">Besan Soap </h4>
+                    <h4 class="product-title font-bold text-gray-900 truncate">Besan Soap</h4>
                     <p class="product-tagline text-natureGreen font-medium truncate">Face Glow</p>
-                    <a href="https://wa.me/919944019149?text=Order Sandal Soap" class="product-btn block w-full text-center bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto">Order Now</a>
+                    <div class="flex items-center justify-between mt-auto mb-3 px-1">
+                        <span class="text-[17px] font-bold text-gray-900 font-heading">₹199</span>
+                        <span class="text-xs text-gray-400 font-medium">100g</span>
+                    </div>
+                    <button data-name="Besan Soap" data-price="199" data-image="assets/images/Besan-Soup_Image.png" class="product-btn add-to-cart-btn block w-full bg-natureGreen text-white font-bold rounded-lg hover:bg-natureGreen-dark transition-colors mt-auto flex items-center justify-center gap-2 py-2.5">
+                        <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+                    </button>
                 </div>
             </div>
 
@@ -406,8 +448,326 @@
         </div>
     </footer>
 
+    <!-- Floating Cart Badge -->
+    <button id="cart-badge-btn" class="fixed bottom-6 right-6 z-40 bg-natureGreen text-white p-4 rounded-full shadow-2xl hover:bg-natureGreen-dark hover:scale-110 active:scale-95 transition-all flex items-center justify-center" aria-label="Open Shopping Cart">
+        <i class="fas fa-shopping-cart text-xl"></i>
+        <span id="cart-count-badge" class="absolute -top-1 -right-1 bg-red-600 text-white text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center border border-white transition-all transform duration-300">0</span>
+    </button>
+
+    <!-- Cart Modal Backdrop -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
+        <!-- Modal Content Container -->
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden transform scale-95 transition-all duration-300">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-natureGreen text-white">
+                <h3 class="font-heading font-bold text-lg flex items-center gap-2">
+                    <i class="fas fa-shopping-cart"></i> Your Shopping Cart
+                </h3>
+                <button id="close-modal-btn" class="text-white/80 hover:text-white transition-colors p-1" aria-label="Close Cart">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="flex-grow overflow-y-auto p-6 space-y-6">
+                <!-- Cart Items List Container -->
+                <div id="cart-items-container" class="space-y-4">
+                    <!-- Dynamic Cart Items injected here by JS -->
+                </div>
+                
+                <!-- Shipping Details Form Section -->
+                <div id="shipping-details-section" class="border-t border-gray-100 pt-6">
+                    <h4 class="font-heading font-bold text-[16px] text-gray-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-truck text-natureGreen"></i> Shipping Details
+                    </h4>
+                    <form id="checkout-form" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="shipping-name" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Full Name *</label>
+                                <input type="text" id="shipping-name" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-all placeholder:text-gray-400" placeholder="e.g. John Doe">
+                            </div>
+                            <div>
+                                <label for="shipping-phone" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Contact Number (WhatsApp) *</label>
+                                <input type="tel" id="shipping-phone" required pattern="[0-9]{10}" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-all placeholder:text-gray-400" placeholder="10-digit mobile number">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="shipping-address" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Full Delivery Address *</label>
+                            <textarea id="shipping-address" required rows="2" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-all placeholder:text-gray-400 resize-none" placeholder="Street name, City, State"></textarea>
+                        </div>
+                        <div>
+                            <label for="shipping-pincode" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Pincode *</label>
+                            <input type="text" id="shipping-pincode" required pattern="[0-9]{6}" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-natureGreen focus:ring-1 focus:ring-natureGreen transition-all placeholder:text-gray-400" placeholder="6-digit pincode">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Modal Footer (Fixed at bottom of modal) -->
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-center sm:text-left">
+                    <span class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Total Amount</span>
+                    <div id="cart-total" class="text-2xl font-bold text-gray-900 font-heading">₹0</div>
+                </div>
+                <button type="submit" form="checkout-form" id="place-order-btn" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 transform active:scale-95">
+                    <i class="fab fa-whatsapp text-lg"></i> Place Order via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="script.js"></script>
+    <script>
+        // Self-contained Shopping Cart logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // State
+            let cart = JSON.parse(localStorage.getItem('sm_cart')) || [];
+            
+            // Prefill form from localStorage
+            const savedDetails = JSON.parse(localStorage.getItem('sm_shipping_details')) || {};
+            if (savedDetails.name) document.getElementById('shipping-name').value = savedDetails.name;
+            if (savedDetails.phone) document.getElementById('shipping-phone').value = savedDetails.phone;
+            if (savedDetails.address) document.getElementById('shipping-address').value = savedDetails.address;
+            if (savedDetails.pincode) document.getElementById('shipping-pincode').value = savedDetails.pincode;
+
+            // DOM Elements
+            const cartBadgeBtn = document.getElementById('cart-badge-btn');
+            const cartModal = document.getElementById('cart-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const checkoutForm = document.getElementById('checkout-form');
+            const cartCountBadge = document.getElementById('cart-count-badge');
+
+            // Save Cart to Local Storage and Update UI
+            function saveCart() {
+                localStorage.setItem('sm_cart', JSON.stringify(cart));
+                updateCartBadge();
+                renderCart();
+            }
+
+            // Update Badge Count
+            function updateCartBadge() {
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCountBadge.textContent = count;
+                if (count > 0) {
+                    cartCountBadge.classList.remove('scale-0');
+                    cartCountBadge.classList.add('scale-100');
+                } else {
+                    cartCountBadge.classList.remove('scale-100');
+                    cartCountBadge.classList.add('scale-0');
+                }
+            }
+
+            // Toast Message Helper
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'fixed bottom-24 right-6 bg-natureGreen text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow-xl z-50 transition-all duration-300 transform translate-y-10 opacity-0 flex items-center gap-2';
+                toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-10', 'opacity-0');
+                }, 10);
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-10', 'opacity-0');
+                    setTimeout(() => toast.remove(), 300);
+                }, 2000);
+            }
+
+            // Add to Cart Logic
+            function addToCart(name, price, image) {
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price: parseFloat(price), image, quantity: 1 });
+                }
+                saveCart();
+                showToast(`${name} added to cart!`);
+            }
+
+            // Render Cart Items
+            function renderCart() {
+                const itemsContainer = document.getElementById('cart-items-container');
+                const totalElement = document.getElementById('cart-total');
+                const orderBtn = document.getElementById('place-order-btn');
+                const formFields = document.querySelectorAll('#checkout-form input, #checkout-form textarea');
+                
+                if (cart.length === 0) {
+                    itemsContainer.innerHTML = `
+                        <div class="text-center py-8 text-gray-400">
+                            <i class="fas fa-shopping-basket text-4xl mb-3 block text-gray-300"></i>
+                            <p class="text-sm font-medium">Your cart is empty.</p>
+                            <p class="text-xs text-gray-400 mt-1">Add items from the collection to get started.</p>
+                        </div>
+                    `;
+                    totalElement.textContent = '₹0';
+                    orderBtn.disabled = true;
+                    orderBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    formFields.forEach(field => field.disabled = true);
+                    return;
+                }
+                
+                orderBtn.disabled = false;
+                orderBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                formFields.forEach(field => field.disabled = false);
+                
+                let total = 0;
+                itemsContainer.innerHTML = cart.map((item, index) => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    return `
+                        <div class="flex items-center gap-4 py-3.5 border-b border-gray-100 last:border-b-0">
+                            <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-contain bg-gray-50 border border-gray-100 rounded-lg flex-shrink-0">
+                            <div class="flex-grow min-w-0">
+                                <h5 class="text-sm font-bold text-gray-900 truncate">${item.name}</h5>
+                                <span class="text-xs text-gray-500 font-medium">₹${item.price} each</span>
+                            </div>
+                            
+                            <!-- Quantity Controls -->
+                            <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden flex-shrink-0 bg-white">
+                                <button type="button" data-index="${index}" data-action="decrease" class="qty-btn px-2.5 py-1 text-gray-500 hover:bg-gray-100 transition-colors" aria-label="Decrease quantity">
+                                    <i class="fas fa-minus text-[9px]"></i>
+                                </button>
+                                <span class="px-2.5 py-1 text-xs font-bold text-gray-900 border-x border-gray-100 bg-gray-50/50 min-w-[28px] text-center">${item.quantity}</span>
+                                <button type="button" data-index="${index}" data-action="increase" class="qty-btn px-2.5 py-1 text-gray-500 hover:bg-gray-100 transition-colors" aria-label="Increase quantity">
+                                    <i class="fas fa-plus text-[9px]"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Subtotal and Remove -->
+                            <div class="text-right flex-shrink-0 min-w-[70px]">
+                                <div class="text-sm font-bold text-gray-900 font-heading">₹${subtotal}</div>
+                                <button type="button" data-index="${index}" data-action="remove" class="remove-btn text-xs text-red-500 hover:text-red-700 font-medium transition-colors mt-0.5" aria-label="Remove item">
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                totalElement.textContent = `₹${total}`;
+            }
+
+            // Delegation for cart controls (qty buttons and remove links)
+            document.getElementById('cart-items-container').addEventListener('click', (e) => {
+                const btn = e.target.closest('.qty-btn, .remove-btn');
+                if (!btn) return;
+                
+                const index = parseInt(btn.dataset.index, 10);
+                const action = btn.dataset.action;
+                
+                if (action === 'increase') {
+                    cart[index].quantity += 1;
+                    saveCart();
+                } else if (action === 'decrease') {
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity -= 1;
+                    } else {
+                        cart.splice(index, 1);
+                    }
+                    saveCart();
+                } else if (action === 'remove') {
+                    cart.splice(index, 1);
+                    saveCart();
+                }
+            });
+
+            // Modal Interactions
+            function openModal() {
+                cartModal.classList.remove('opacity-0', 'pointer-events-none');
+                cartModal.firstElementChild.classList.remove('scale-95');
+                cartModal.firstElementChild.classList.add('scale-100');
+                document.body.style.overflow = 'hidden';
+                renderCart();
+            }
+
+            function closeModal() {
+                cartModal.classList.add('opacity-0', 'pointer-events-none');
+                cartModal.firstElementChild.classList.remove('scale-100');
+                cartModal.firstElementChild.classList.add('scale-95');
+                document.body.style.overflow = '';
+            }
+
+            cartBadgeBtn.addEventListener('click', openModal);
+            closeModalBtn.addEventListener('click', closeModal);
+            cartModal.addEventListener('click', (e) => {
+                if (e.target === cartModal) closeModal();
+            });
+
+            // Add Event Listeners for Product "Add to Cart" Buttons
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('.add-to-cart-btn');
+                if (!btn) return;
+                
+                const name = btn.getAttribute('data-name');
+                const price = btn.getAttribute('data-price');
+                const image = btn.getAttribute('data-image');
+                
+                if (name && price) {
+                    addToCart(name, price, image);
+                }
+            });
+
+            // Checkout Form Submission & WhatsApp Redirect
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                if (cart.length === 0) return;
+                
+                // Collect Form Details
+                const name = document.getElementById('shipping-name').value.trim();
+                const phone = document.getElementById('shipping-phone').value.trim();
+                const address = document.getElementById('shipping-address').value.trim();
+                const pincode = document.getElementById('shipping-pincode').value.trim();
+                
+                // Save to localStorage for convenience
+                localStorage.setItem('sm_shipping_details', JSON.stringify({ name, phone, address, pincode }));
+                
+                // Formulate Order Summary Text
+                let orderSummary = '';
+                let grandTotal = 0;
+                
+                cart.forEach((item, index) => {
+                    const itemSubtotal = item.price * item.quantity;
+                    grandTotal += itemSubtotal;
+                    orderSummary += `${index + 1}. *${item.name}* (₹${item.price} x ${item.quantity}) = ₹${itemSubtotal}\n`;
+                });
+                
+                const whatsappMessage = 
+`🛍️ *SREEMAYIL LIFESTYLE CENTRE - NEW ORDER*
+----------------------------------
+👤 *Customer Name:* ${name}
+📞 *Phone Number:* ${phone}
+📍 *Delivery Address:* ${address}
+📌 *Pincode:* ${pincode}
+
+----------------------------------
+📦 *Order Items:*
+${orderSummary}
+💰 *Grand Total: ₹${grandTotal}*
+----------------------------------
+Thank you for ordering with us!`;
+
+                // Redirect to WhatsApp API
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                const whatsappUrl = `https://wa.me/919944019149?text=${encodedMessage}`;
+                
+                // Clear cart state
+                cart = [];
+                saveCart();
+                closeModal();
+                checkoutForm.reset();
+                
+                // Perform Redirect
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // Initialize State
+            updateCartBadge();
+        });
+    </script>
 </body>
 </html>
 
